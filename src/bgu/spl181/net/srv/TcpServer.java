@@ -45,7 +45,14 @@ public class TcpServer<T> implements Server<T> {
 
             @Override
             public void disconnect(int connectionId) {
-
+                BlockingConnectionHandler handler = map.remove(connectionId);
+                if (handler != null) {
+                    try {
+                        handler.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         };
     }
