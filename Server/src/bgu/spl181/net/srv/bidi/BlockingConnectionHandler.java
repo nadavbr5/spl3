@@ -1,7 +1,8 @@
-package Server.src.bgu.spl181.net.srv.bidi;
+package bgu.spl181.net.srv.bidi;
 
-import Server.src.bgu.spl181.net.api.MessageEncoderDecoder;
-import Server.src.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+
+import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

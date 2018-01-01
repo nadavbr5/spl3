@@ -1,8 +1,7 @@
-package Server.src.bgu.spl181.net.srv;
+package bgu.spl181.net.srv;
 
-import Server.src.bgu.spl181.net.api.MessageEncoderDecoder;
-import Server.src.bgu.spl181.net.api.MessagingProtocol;
-import Server.src.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
 
 import java.io.Closeable;
 import java.util.function.Supplier;
@@ -25,9 +24,9 @@ public interface Server<T> extends Closeable {
     public static <T> Server<T>  threadPerClient(
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T> > encoderDecoderFactory) {
+            Supplier<MessageEncoderDecoder<T>> encoderDecoderFactory) {
 
-        return new TcpServer<T>(port, protocolFactory, encoderDecoderFactory);
+        return new TpcServer<T>(port, protocolFactory, encoderDecoderFactory);
 
     }
 
@@ -40,12 +39,12 @@ public interface Server<T> extends Closeable {
      * @param <T> The Message Object for the protocol
      * @return A new reactor server
      */
-    public static <T> Server<T> reactor(
-            int nthreads,
-            int port,
-            Supplier<MessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T>> encoderDecoderFactory) {
-        return new Reactor<T>(nthreads, port, protocolFactory, encoderDecoderFactory);
-    }
+//    public static <T> Server<T> reactor(
+//            int nthreads,
+//            int port,
+//            Supplier<BidiMessagingProtocol<T>> protocolFactory,
+//            Supplier<MessageEncoderDecoder<T>> encoderDecoderFactory) {
+//        return new Reactor<T>(nthreads, port, protocolFactory, encoderDecoderFactory);
+//    }
 
 }

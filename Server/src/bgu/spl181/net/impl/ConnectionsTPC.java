@@ -1,7 +1,7 @@
-package bgu.spl181.net.api.bidi;
+package bgu.spl181.net.impl;
 
 
-import bgu.spl181.net.srv.Server;
+import bgu.spl181.net.api.bidi.Connections;
 import bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
 
 import java.io.IOException;

@@ -1,17 +1,18 @@
-package Server.src.bgu.spl181.net.srv;
+package bgu.spl181.net.srv;
 
-import Server.src.bgu.spl181.net.api.MessageEncoderDecoder;
-import Server.src.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
-import Server.src.bgu.spl181.net.api.bidi.Connections;
-import Server.src.bgu.spl181.net.api.bidi.ConnectionsTPC;
-import Server.src.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
+
+import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.Connections;
+import bgu.spl181.net.impl.ConnectionsTPC;
+import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
+import bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.function.Supplier;
 
-public class TcpServer<T> implements Server<T> {
+public class TpcServer<T> implements Server<T> {
 
     private final int port;
     private final Supplier<BidiMessagingProtocol<T>> protocolFactory;
@@ -19,7 +20,7 @@ public class TcpServer<T> implements Server<T> {
     private ServerSocket sock;
     private Connections<String> connections;
 
-    public TcpServer(
+    public TpcServer(
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
             Supplier<MessageEncoderDecoder<T>> encdecFactory) {
