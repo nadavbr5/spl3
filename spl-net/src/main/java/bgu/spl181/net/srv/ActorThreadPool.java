@@ -1,4 +1,4 @@
-package bgu.spl181.net.srv;
+package Server.src.bgu.spl181.net.srv;
 
 import java.util.LinkedList;
 import java.util.Map;

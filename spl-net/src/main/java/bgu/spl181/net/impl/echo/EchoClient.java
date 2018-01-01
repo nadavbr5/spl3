@@ -1,4 +1,4 @@
-package bgu.spl181.net.impl.echo;
+package Server.src.bgu.spl181.net.impl.echo;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

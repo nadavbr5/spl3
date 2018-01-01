@@ -1,6 +1,6 @@
-package bgu.spl181.net.impl.rci;
+package Server.src.bgu.spl181.net.impl.rci;
 
-import bgu.spl181.net.api.MessageEncoderDecoder;
+import Server.src.bgu.spl181.net.api.MessageEncoderDecoder;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInput;

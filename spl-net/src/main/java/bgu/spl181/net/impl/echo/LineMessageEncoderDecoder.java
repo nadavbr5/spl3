@@ -1,6 +1,6 @@
-package bgu.spl181.net.impl.echo;
+package Server.src.bgu.spl181.net.impl.echo;
 
-import bgu.spl181.net.api.MessageEncoderDecoder;
+import Server.src.bgu.spl181.net.api.MessageEncoderDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 

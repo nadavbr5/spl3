@@ -1,4 +1,4 @@
-package bgu.spl181.net.api.bidi;
+package Server.src.bgu.spl181.net.api.bidi;
 
 public interface Connections<T> {
 

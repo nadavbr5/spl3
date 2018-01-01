@@ -1,4 +1,4 @@
-package bgu.spl181.net.impl.newsfeed;
+package Server.src.bgu.spl181.net.impl.newsfeed;
 
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;

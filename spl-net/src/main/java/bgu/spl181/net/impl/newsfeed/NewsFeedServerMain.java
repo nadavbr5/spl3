@@ -1,8 +1,8 @@
-package bgu.spl181.net.impl.newsfeed;
+package Server.src.bgu.spl181.net.impl.newsfeed;
 
-import bgu.spl181.net.impl.rci.ObjectEncoderDecoder;
-import bgu.spl181.net.impl.rci.RemoteCommandInvocationProtocol;
-import bgu.spl181.net.srv.Server;
+import Server.src.bgu.spl181.net.impl.rci.ObjectEncoderDecoder;
+import Server.src.bgu.spl181.net.impl.rci.RemoteCommandInvocationProtocol;
+import Server.src.bgu.spl181.net.srv.Server;
 
 public class NewsFeedServerMain {
 

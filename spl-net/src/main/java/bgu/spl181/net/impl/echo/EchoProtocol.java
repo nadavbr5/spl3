@@ -1,6 +1,6 @@
-package bgu.spl181.net.impl.echo;
+package Server.src.bgu.spl181.net.impl.echo;
 
-import bgu.spl181.net.api.MessagingProtocol;
+import Server.src.bgu.spl181.net.api.MessagingProtocol;
 import java.time.LocalDateTime;
 
 public class EchoProtocol implements MessagingProtocol<String> {

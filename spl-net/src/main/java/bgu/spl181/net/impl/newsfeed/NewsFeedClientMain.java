@@ -1,6 +1,6 @@
-package bgu.spl181.net.impl.newsfeed;
+package Server.src.bgu.spl181.net.impl.newsfeed;
 
-import bgu.spl181.net.impl.rci.RCIClient;
+import Server.src.bgu.spl181.net.impl.rci.RCIClient;
 
 public class NewsFeedClientMain {
 

@@ -1,4 +1,4 @@
-package bgu.spl181.net;
+package Server.src.bgu.spl181.net;
 
 import java.util.ArrayList;
 

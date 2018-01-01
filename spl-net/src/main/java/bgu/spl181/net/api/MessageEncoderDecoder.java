@@ -1,4 +1,4 @@
-package bgu.spl181.net.api;
+package Server.src.bgu.spl181.net.api;
 
 public interface MessageEncoderDecoder<T> {
 
