@@ -6,6 +6,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class BlockingConnectionHandler<T> implements Runnable, ConnectionHandler<T> {
 
@@ -15,11 +16,13 @@ public class BlockingConnectionHandler<T> implements Runnable, ConnectionHandler
     private BufferedInputStream in;
     private BufferedOutputStream out;
     private volatile boolean connected = true;
+    private ReentrantReadWriteLock lock;
 
     public BlockingConnectionHandler(Socket sock, MessageEncoderDecoder<T> reader, MessagingProtocol<T> protocol) {
         this.sock = sock;
         this.encdec = reader;
         this.protocol = protocol;
+        lock= new ReentrantReadWriteLock();
     }
 
     @Override
@@ -35,8 +38,13 @@ public class BlockingConnectionHandler<T> implements Runnable, ConnectionHandler
                 if (nextMessage != null) {
                     T response = protocol.process(nextMessage);
                     if (response != null) {
-                        out.write(encdec.encode(response));
-                        out.flush();
+                        try {
+                            lock.writeLock().lock();
+                            out.write(encdec.encode(response));
+                            out.flush();
+                        }finally {
+                            lock.writeLock().unlock();
+                        }
                     }
                 }
             }
@@ -54,14 +62,19 @@ public class BlockingConnectionHandler<T> implements Runnable, ConnectionHandler
     }
 
     @Override
-    public void send(T msg) {
+    public boolean send(T msg) {
         if (msg != null) {
             try {
+                lock.writeLock().lock();
                 out.write(encdec.encode(msg));
                 out.flush();
+                return true;
             } catch (IOException e) {
                 e.printStackTrace();
+            }finally {
+                lock.writeLock().unlock();
             }
         }
+        return false;
     }
 }

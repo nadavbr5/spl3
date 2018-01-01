@@ -6,7 +6,6 @@
 package bgu.spl181.net.srv.bidi;
 
 import java.io.Closeable;
-import java.io.IOException;
 
 /**
  *
@@ -14,6 +13,6 @@ import java.io.IOException;
  */
 public interface ConnectionHandler<T> extends Closeable{
 
-    void send(T msg) ;
+    boolean send(T msg) ;
 
 }
