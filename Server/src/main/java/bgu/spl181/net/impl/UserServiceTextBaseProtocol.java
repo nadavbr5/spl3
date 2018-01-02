@@ -1,15 +1,16 @@
-package bgu.spl181.net.impl;
+package main.java.bgu.spl181.net.impl;
 
-import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
-import bgu.spl181.net.api.bidi.Connections;
+import com.google.gson.JsonElement;
+import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import main.java.bgu.spl181.net.api.bidi.Connections;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Matcher;
@@ -49,7 +50,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
                 return signoutProcess();
             }
             case "REQUEST" :{
-                return "REQUEST";
+                return requestProccess();
             }
         }
         return "";
@@ -73,17 +74,18 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         //TODO: change this string 'country= ... ' to the name of the country
         String country= this.msg.remove(0);
        //if the user name already exists in the system- returns error
-       ArrayList <User> users= getUsers();
-        AtomicBoolean isRegistered=new AtomicBoolean();
-       users.forEach((user ->isRegistered.compareAndSet(false,user.getName().equals(userName)) ));
-      try {
-          if (isRegistered.get())
-              return "ERROR registration failed";
-      }finally {
-          usersLock.writeLock().unlock();
-      }
-        User reg = new User(userName,"normal", password);
-        users.add(reg);
+        usersLock.writeLock().lock();
+            ArrayList <User> users= getUsers();
+            AtomicBoolean isRegistered = new AtomicBoolean();
+            users.forEach((user -> isRegistered.compareAndSet(false, user.getName().equals(userName))));
+            try {
+                if (isRegistered.get())
+                    return "ERROR registration failed";
+            } finally {
+                usersLock.writeLock().unlock();
+            }
+            User reg = new User(userName, "normal", password);
+            users.add(reg);
         updateUsers(users);
         return "ACK registration succeeded";
     }
@@ -91,16 +93,19 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     public String loginProcess(){
         String userName= this.msg.remove(0);
         String password= this.msg.remove(0);
+        usersLock.readLock().lock();
         ArrayList <User> users= getUsers();
         AtomicBoolean isValid=new AtomicBoolean();
-        users.forEach((user ->isValid.compareAndSet(false,user.getName().equals(userName)&&user.getPassword().equals(password)) ));
+        users.forEach((user ->isValid.compareAndSet(false,
+                user.getName().equals(userName)&&
+                        user.getPassword().equals(password)) ));
         try{
             if (!isValid.get()||!connections.login(userName,connectionId)) {
                 return "ERROR login failed";
             }
             return "ACK login succeeded";
         }finally {
-            usersLock.writeLock().unlock();
+            usersLock.readLock().unlock();
         }
     }
 
@@ -108,14 +113,21 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         return connections.logout(connectionId) ? "ACK logout succeeded" : "ERROR logout failed";
     }
 
+    //returns "REQUEST" if the user is login , else returns ""
+    public String requestProccess(){
+        String userName= connections.returnName(connectionId);
+        if(connections.login(userName, connectionId))
+            return "REQUEST";
+        return "";
+    }
     //after finishing with the arrayList- should call readLock().unlock
     private ArrayList<Movie> getMovies() {
-        moviesLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Movies.json");
         try (FileReader reader=new FileReader(jsonFile)){
-            Type arrayListType = new TypeToken<Collection<Movie>>() {
+            Type arrayListType = new TypeToken<ArrayList<Movie>>() {
             }.getType();
-            return gson.fromJson(reader,arrayListType);
+            JsonElement jsonElement= gson.fromJson(reader,JsonElement.class);
+            return  gson.fromJson(jsonElement.getAsJsonObject().get("movies"),arrayListType);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -123,12 +135,12 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     }
     //after finishing with the arrayList- should call readLock().unlock
     private ArrayList<User> getUsers() {
-        usersLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Users.json");
         try (FileReader reader=new FileReader(jsonFile)){
-            Type arrayListType = new TypeToken<Collection<User>>() {
+           Type arrayListType = new TypeToken<ArrayList<User>>() {
             }.getType();
-            return gson.fromJson(reader,arrayListType);
+            JsonElement jsonElement= gson.fromJson(reader,JsonElement.class);
+            return  gson.fromJson(jsonElement.getAsJsonObject().get("users"),arrayListType);
         } catch (IOException e) {
             e.printStackTrace();
         }

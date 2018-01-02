@@ -1,6 +1,6 @@
-package bgu.spl181.net.impl;
+package main.java.bgu.spl181.net.impl;
 
-import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
+import main.java.bgu.spl181.net.api.bidi.MessageEncoderDecoder;
 
 public class EncoderDecoder implements MessageEncoderDecoder<String> {
     private byte[] msg=new byte[1<<16];

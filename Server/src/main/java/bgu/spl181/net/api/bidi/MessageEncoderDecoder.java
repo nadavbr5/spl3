@@ -1,4 +1,4 @@
-package bgu.spl181.net.api.bidi;
+package main.java.bgu.spl181.net.api.bidi;
 
 public interface MessageEncoderDecoder<T> {
 

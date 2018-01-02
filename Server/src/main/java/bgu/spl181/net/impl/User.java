@@ -1,21 +1,21 @@
-package bgu.spl181.net.impl;
+package main.java.bgu.spl181.net.impl;
 
 import java.util.ArrayList;
 
 public class User {
 
-    private String name;
+    private String username;
     private String type;
     private String password;
-    private ArrayList<String> movies;
+    private ArrayList movies;
     private int balance;
 
     //TODO:: check that the inputs are valid- if the name is not already exits in the system ,type is admin/ normal, balance is a number >=0
     public User(String name, String type, String password) {
-        this.name = name;
+        this.username = name;
         this.type = type;
         this.password = password;
-        this.movies = new ArrayList<>();
+        this.movies = new ArrayList<String>();
         this.balance = 0;
     }
 
@@ -45,7 +45,7 @@ public class User {
 
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public String getPassword() {

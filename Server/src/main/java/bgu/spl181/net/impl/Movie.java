@@ -1,4 +1,4 @@
-package bgu.spl181.net.impl;
+package main.java.bgu.spl181.net.impl;
 
 import java.util.ArrayList;
 

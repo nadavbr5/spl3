@@ -1,11 +1,10 @@
-package bgu.spl181.net.srv;
+package main.java.bgu.spl181.net.srv;
 
 
-import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
-import bgu.spl181.net.api.bidi.Connections;
-import bgu.spl181.net.impl.ConnectionsTPC;
-import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
-import bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
+import main.java.bgu.spl181.net.api.bidi.MessageEncoderDecoder;
+import main.java.bgu.spl181.net.impl.ConnectionsTPC;
+import main.java.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
+import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
 
 import java.io.IOException;
 import java.net.ServerSocket;
