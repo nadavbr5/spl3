@@ -13,14 +13,15 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MessageProtocol implements BidiMessagingProtocol<String> {
+public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String> {
 
-    private boolean done;
-    private int connectionId;
-    private Connections<String> connections;
-    private static final ReentrantReadWriteLock moviesLock=new ReentrantReadWriteLock();
-    private static final ReentrantReadWriteLock usersLock= new ReentrantReadWriteLock();
-    private Gson gson;
+    protected boolean done;
+    protected int connectionId;
+    protected Connections<String> connections;
+    protected static final ReentrantReadWriteLock moviesLock=new ReentrantReadWriteLock();
+    protected static final ReentrantReadWriteLock usersLock= new ReentrantReadWriteLock();
+    protected Gson gson;
+    protected ArrayList<String> msg;
 
     @Override
     public void start(int connectionId, Connections connections) {
@@ -30,13 +31,29 @@ public class MessageProtocol implements BidiMessagingProtocol<String> {
         gson = new Gson();
     }
 
+    //if msg is empty at the end of this function that means that the action is 'request'
     @Override
     public String process(String message) {
-        ArrayList<String> command=parseMessage(message);
+        this.msg =parseMessage(message);
+        switch ((!msg.isEmpty()? msg.remove(0):"" )){
+            //return registerProcess ?
+            case "REGISTER":{
+                return registerProcess();
+            }
+            case  "LOGIN" :{
+                return loginProcess();
+            }
+            case "SIGNOUT":{
+                return signoutProcess();
+            }
+            case "REQUEST" :{
+                return "REQUEST";
+            }
+        }
         return "";
     }
 
-    private ArrayList<String> parseMessage(String message) {
+    protected ArrayList<String> parseMessage(String message) {
         ArrayList<String> command = new ArrayList<>();
         String regex= "\"([^\"]*)\"|(\\S+)";
         Matcher matcher = Pattern.compile(regex).matcher(message);
@@ -46,45 +63,18 @@ public class MessageProtocol implements BidiMessagingProtocol<String> {
         return command;
     }
 
-    public String registerProcess(String message){
+    public String registerProcess(){
+
+    }
+
+    public String loginProcess(){
         throw new UnsupportedOperationException("not implemented");
     }
 
-    public String loginProcess(String message){
+    public String signoutProcess(){
         throw new UnsupportedOperationException("not implemented");
     }
 
-    public String logoutProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String balanceInfoProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String balanceAddProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String infoProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String returnProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String addMovieProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String reMovieProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
-
-    public String changePriceProcess(String message){
-        throw new UnsupportedOperationException("not implemented");
-    }
 
     //after finishing with the arrayList- should call readLock().unlock
     private ArrayList<Movie> getMovies() {
