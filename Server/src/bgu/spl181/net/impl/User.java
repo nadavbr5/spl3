@@ -11,12 +11,12 @@ public class User {
     private int balance;
 
     //TODO:: check that the inputs are valid- if the name is not already exits in the system ,type is admin/ normal, balance is a number >=0
-    public User(String name, String type, String password, ArrayList<String> movies, int balance) {
+    public User(String name, String type, String password) {
         this.name = name;
         this.type = type;
         this.password = password;
-        this.movies = movies;
-        this.balance = balance;
+        this.movies = new ArrayList<>();
+        this.balance = 0;
     }
 
     public boolean isAdmin() {
@@ -44,7 +44,11 @@ public class User {
     }
 
 
+    public String getName() {
+        return name;
+    }
 
-
-
+    public String getPassword() {
+        return password;
+    }
 }

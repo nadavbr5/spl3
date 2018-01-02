@@ -9,6 +9,8 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,7 +19,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
 
     protected boolean done;
     protected int connectionId;
-    protected Connections<String> connections;
+    protected ConnectionsTPC connections;
     protected static final ReentrantReadWriteLock moviesLock=new ReentrantReadWriteLock();
     protected static final ReentrantReadWriteLock usersLock= new ReentrantReadWriteLock();
     protected Gson gson;
@@ -27,7 +29,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     public void start(int connectionId, Connections connections) {
         done= false;
         this.connectionId=connectionId;
-        this.connections=connections;
+        this.connections= (ConnectionsTPC) connections;
         gson = new Gson();
     }
 
@@ -64,21 +66,51 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     }
 
     public String registerProcess(){
-
+        if(msg.size()<3)
+            return "ERROR registration failed";
+        String userName= this.msg.remove(0);
+        String password= this.msg.remove(0);
+        //TODO: change this string 'country= ... ' to the name of the country
+        String country= this.msg.remove(0);
+       //if the user name already exists in the system- returns error
+       ArrayList <User> users= getUsers();
+        AtomicBoolean isRegistered=new AtomicBoolean();
+       users.forEach((user ->isRegistered.compareAndSet(false,user.getName().equals(userName)) ));
+      try {
+          if (isRegistered.get())
+              return "ERROR registration failed";
+      }finally {
+          usersLock.writeLock().unlock();
+      }
+        User reg = new User(userName,"normal", password);
+        users.add(reg);
+        updateUsers(users);
+        return "ACK registration succeeded";
     }
 
     public String loginProcess(){
-        throw new UnsupportedOperationException("not implemented");
+        String userName= this.msg.remove(0);
+        String password= this.msg.remove(0);
+        ArrayList <User> users= getUsers();
+        AtomicBoolean isValid=new AtomicBoolean();
+        users.forEach((user ->isValid.compareAndSet(false,user.getName().equals(userName)&&user.getPassword().equals(password)) ));
+        try{
+            if (!isValid.get()||!connections.login(userName,connectionId)) {
+                return "ERROR login failed";
+            }
+            return "ACK login succeeded";
+        }finally {
+            usersLock.writeLock().unlock();
+        }
     }
 
     public String signoutProcess(){
-        throw new UnsupportedOperationException("not implemented");
+        return connections.logout(connectionId) ? "ACK logout succeeded" : "ERROR logout failed";
     }
-
 
     //after finishing with the arrayList- should call readLock().unlock
     private ArrayList<Movie> getMovies() {
-        moviesLock.readLock().lock();
+        moviesLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Movies.json");
         try (FileReader reader=new FileReader(jsonFile)){
             Type arrayListType = new TypeToken<Collection<Movie>>() {
@@ -87,11 +119,11 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
     //after finishing with the arrayList- should call readLock().unlock
-    private ArrayList<Movie> getUsers() {
-        usersLock.readLock().lock();
+    private ArrayList<User> getUsers() {
+        usersLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Users.json");
         try (FileReader reader=new FileReader(jsonFile)){
             Type arrayListType = new TypeToken<Collection<User>>() {
@@ -100,11 +132,10 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
 
     private void updateMovies(ArrayList<Movie> movies) {
-        moviesLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Movies.json");
         try (FileWriter writer = new FileWriter(jsonFile)) {
             String updatedFile = gson.toJson(movies);
@@ -119,7 +150,6 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     }
 
     private void updateUsers(ArrayList<User> users) {
-        usersLock.writeLock().lock();
         File jsonFile = new File("Server/Database/Users.json");
         try (FileWriter writer = new FileWriter(jsonFile)) {
             String updatedFile = gson.toJson(users);

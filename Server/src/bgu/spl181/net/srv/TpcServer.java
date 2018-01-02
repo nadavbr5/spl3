@@ -10,6 +10,7 @@ import bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
 public class TpcServer<T> implements Server<T> {
@@ -18,7 +19,8 @@ public class TpcServer<T> implements Server<T> {
     private final Supplier<BidiMessagingProtocol<T>> protocolFactory;
     private final Supplier<MessageEncoderDecoder<T>> encdecFactory;
     private ServerSocket sock;
-    private Connections<String> connections;
+    private ConnectionsTPC<T> connections;
+    private final AtomicInteger id = new AtomicInteger();
 
     public TpcServer(
             int port,
@@ -47,8 +49,9 @@ public class TpcServer<T> implements Server<T> {
                 BlockingConnectionHandler<T> handler = new BlockingConnectionHandler<>(
                         clientSock,
                         encdecFactory.get(),
-                        protocolFactory.get());
+                        protocolFactory.get(), id.getAndIncrement(),connections);
 
+                connections.connect(id.get(),handler);
                 execute(handler);
             }
         } catch (IOException ex) {
@@ -66,6 +69,7 @@ public class TpcServer<T> implements Server<T> {
     private void execute(BlockingConnectionHandler<T> handler) {
         new Thread(handler).start();
     }
+
 
 
 }
