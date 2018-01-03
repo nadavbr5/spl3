@@ -4,43 +4,43 @@
       "username": "john",
       "type": "admin",
       "password": "potato",
-      "country": "united states",
       "movies": [],
-      "balance": "0"
+      "balance": 50,
+      "country": "united states"
     },
-	{
+    {
       "username": "lisa",
       "type": "normal",
       "password": "chips123",
-      "country": "spain",
       "movies": [
         {
           "id": "2",
           "name": "The Pursuit Of Happyness"
         },
-		{
-		  "id": "3",
-		  "name": "The Notebook"
-		}
+        {
+          "id": "3",
+          "name": "The Notebook"
+        }
       ],
-      "balance": "37"
+      "balance": 37,
+      "country": "spain"
     },
-	{
+    {
       "username": "shlomi",
       "type": "normal",
       "password": "cocacola",
-      "country": "israel",
       "movies": [
         {
           "id": "1",
           "name": "The Godfather"
         },
-		{
-		  "id": "2",
-		  "name": "The Pursuit Of Happyness"
-		}
+        {
+          "id": "2",
+          "name": "The Pursuit Of Happyness"
+        }
       ],
-      "balance": "112"
+      "balance": 112,
+      "country": "israel"
     }
   ]
 }
