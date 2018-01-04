@@ -1,0 +1,5 @@
+/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client
+-- Could NOT find Boost
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug

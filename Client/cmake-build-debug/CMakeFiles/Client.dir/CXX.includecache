@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h
+string
+-
+iostream
+-
+boost/asio.hpp
+-
+boost/thread.hpp
+-
+
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Client.cpp
+../include/connectionHandler.h
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h
+
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/connectionHandler.cpp
+../include/connectionHandler.h
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h
+

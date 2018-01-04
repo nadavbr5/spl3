@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cdd1f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cdd1f.dir/build.make CMakeFiles/cmTC_cdd1f.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cdd1f.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_cdd1f.dir/CheckSymbolExists.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_cdd1f
+/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cdd1f.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_cdd1f.dir/CheckSymbolExists.c.o  -o cmTC_cdd1f 
+CMakeFiles/cmTC_cdd1f.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cdd1f.dir/build.make:97: recipe for target 'cmTC_cdd1f' failed
+make[1]: *** [cmTC_cdd1f] Error 1
+make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_cdd1f/fast' failed
+make: *** [cmTC_cdd1f/fast] Error 2
+
+File /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ffcbb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ffcbb.dir/build.make CMakeFiles/cmTC_ffcbb.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ffcbb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ffcbb.dir/CheckFunctionExists.c.o   -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ffcbb
+/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffcbb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_ffcbb.dir/CheckFunctionExists.c.o  -o cmTC_ffcbb -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ffcbb.dir/build.make:97: recipe for target 'cmTC_ffcbb' failed
+make[1]: *** [cmTC_ffcbb] Error 1
+make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ffcbb/fast' failed
+make: *** [cmTC_ffcbb/fast] Error 2
+
+
