@@ -55,7 +55,7 @@ public class Movie {
 
     //TODO:: change the function
     public String toString() {
-        return "\"name\" " + availableAmount + " " + totalAmount + " " + bannedCountries.toString();
+        return "\""+name+"\" " + availableAmount + " " + totalAmount + " " + bannedCountries.toString();
 
     }
 

@@ -16,54 +16,55 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     protected boolean done;
     protected int connectionId;
     protected ConnectionsTPC connections;
-    protected static final ReentrantReadWriteLock moviesLock=new ReentrantReadWriteLock();
-    protected static final ReentrantReadWriteLock usersLock= new ReentrantReadWriteLock();
+    protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock();
+    protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock();
     protected ArrayList<String> msg;
     protected SharedProtocolData sharedProtocolData;
     protected String response;
-    protected boolean isLoggedIn =false;
+    protected boolean isLoggedIn = false;
 
     public UserServiceTextBaseProtocol(SharedProtocolData sharedProtocolData) {
-        this.sharedProtocolData=sharedProtocolData;
+        this.sharedProtocolData = sharedProtocolData;
     }
+
     @Override
     public void start(int connectionId, Connections connections) {
-        done= false;
-        this.connectionId=connectionId;
-        this.connections= (ConnectionsTPC) connections;
-        response=null;
+        done = false;
+        this.connectionId = connectionId;
+        this.connections = (ConnectionsTPC) connections;
+        response = null;
     }
 
     //if msg is empty at the end of this function that means that the action is 'request'
     @Override
     public void process(String message) {
-        this.msg =parseMessage(message);
-        switch ((!msg.isEmpty()? msg.remove(0):"" )){
+        this.msg = parseMessage(message);
+        switch ((!msg.isEmpty() ? msg.remove(0) : "")) {
             //return registerProcess ?
-            case "REGISTER":{
-                response= registerProcess();
+            case "REGISTER": {
+                response = registerProcess();
                 break;
             }
-            case  "LOGIN" :{
-                response= loginProcess();
+            case "LOGIN": {
+                response = loginProcess();
                 break;
             }
-            case "SIGNOUT":{
-                response= signoutProcess();
+            case "SIGNOUT": {
+                response = signoutProcess();
                 break;
             }
-            case "REQUEST" :{
-                response= "CONTINUE";
+            case "REQUEST": {
+                response = "CONTINUE";
                 break;
             }
         }
-        if (!response.equals("CONTINUE"))
-            connections.send(connectionId,response);
+        if (!response.equals("CONTINUE") && !response.equals("SIGNOUT"))
+            connections.send(connectionId, response);
     }
 
     protected ArrayList<String> parseMessage(String message) {
         ArrayList<String> command = new ArrayList<>();
-        String regex= "\"([^\"]*)\"|(\\S+)";
+        String regex = "\"([^\"]*)\"|(\\S+)";
         Matcher matcher = Pattern.compile(regex).matcher(message);
         while (matcher.find()) {
             command.add(matcher.group());
@@ -71,67 +72,67 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         return command;
     }
 
-    private String registerProcess(){
-        if(msg.size()<3)
+    private String registerProcess() {
+        if (msg.size() < 3)
             return "ERROR registration failed";
-        String userName= this.msg.remove(0);
-        String password= this.msg.remove(0);
-       //if the user name already exists in the system- returns error
+        String userName = this.msg.remove(0);
+        String password = this.msg.remove(0);
+        //if the user name already exists in the system- returns error
         usersLock.writeLock().lock();
-            ArrayList <User> users= sharedProtocolData.getUsers();
-            AtomicBoolean isRegistered = new AtomicBoolean();
-            users.forEach((user -> isRegistered.compareAndSet(false, user.getName().equals(userName))));
-            try {
-                if (isRegistered.get())
-                    return "ERROR registration failed";
-            } finally {
-                usersLock.writeLock().unlock();
-            }
-            User reg = new User(userName, "normal", password, new String());
-            users.add(reg);
+        ArrayList<User> users = sharedProtocolData.getUsers();
+        AtomicBoolean isRegistered = new AtomicBoolean();
+        users.forEach((user -> isRegistered.compareAndSet(false, user.getName().equals(userName))));
+        try {
+            if (isRegistered.get())
+                return "ERROR registration failed";
+        } finally {
+            usersLock.writeLock().unlock();
+        }
+        User reg = new User(userName, "normal", password, new String());
+        users.add(reg);
         sharedProtocolData.updateUsers(users);
-        if(this.msg.get(0) == null)
+        if (this.msg.get(0) == null)
             return "ACK registration succeeded";
-        else{
-            this.msg.add(0,userName);
+        else {
+            this.msg.add(0, userName);
             this.msg.add(0, "REGISTER");
         }
         return "CONTINUE";
     }
 
-    private String loginProcess(){
-        String userName= this.msg.remove(0);
-        String password= this.msg.remove(0);
+    private String loginProcess() {
+        String userName = this.msg.remove(0);
+        String password = this.msg.remove(0);
         usersLock.readLock().lock();
-        ArrayList <User> users= sharedProtocolData.getUsers();
-        AtomicBoolean isValid=new AtomicBoolean();
-        users.forEach((user ->isValid.compareAndSet(false,
-                user.getName().equals(userName)&&
-                        user.getPassword().equals(password)) ));
-        try{
-            if (!isValid.get()||!sharedProtocolData.login(userName,connectionId)) {
+        ArrayList<User> users = sharedProtocolData.getUsers();
+        AtomicBoolean isValid = new AtomicBoolean();
+        users.forEach((user -> isValid.compareAndSet(false,
+                user.getName().equals(userName) &&
+                        user.getPassword().equals(password))));
+        try {
+            if (!isValid.get() || !sharedProtocolData.login(userName, connectionId)) {
                 return "ERROR login failed";
             }
-            isLoggedIn=true;
+            isLoggedIn = true;
             return "ACK login succeeded";
-        }finally {
+        } finally {
             usersLock.readLock().unlock();
         }
     }
 
-    private String signoutProcess(){
-        if (sharedProtocolData.logout(connectionId)&&connections.disconnect(connectionId))
-        {
-            isLoggedIn=false;
-            done=false;
-            return "ACK logout succeeded";
-        }
-        else return "ERROR logout failed";
+    private String signoutProcess() {
+        if (sharedProtocolData.logout(connectionId)) {
+            isLoggedIn = false;
+            done = false;
+            connections.send(connectionId, "ACK signout succeeded");
+            connections.disconnect(connectionId);
+            return "SIGNOUT";
+        } else return "ERROR logout failed";
+
     }
 
 
-
-        @Override
+    @Override
     public boolean shouldTerminate() {
         return done;
     }

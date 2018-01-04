@@ -84,10 +84,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/Task.h">
+			<Option target="Client"/>
+		</Unit>
 		<Unit filename="/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h">
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Client.cpp">
+			<Option target="Client"/>
+		</Unit>
+		<Unit filename="/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Task.cpp">
 			<Option target="Client"/>
 		</Unit>
 		<Unit filename="/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/connectionHandler.cpp">

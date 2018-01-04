@@ -1,13 +1,14 @@
 package main.java.bgu.spl181.net.impl;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class User {
 
     private String username;
     private String type;
     private String password;
-    private ArrayList movies;
+    private ArrayList<Movie> movies;
     private int balance;
     private String country;
 
@@ -16,7 +17,7 @@ public class User {
         this.username = name;
         this.type = type;
         this.password = password;
-        this.movies = new ArrayList<String>();
+        this.movies = new ArrayList<Movie>();
         this.balance = 0;
         this.country= country;
     }
@@ -46,7 +47,13 @@ public class User {
 
     //returns true if this user already rent the input movie
     public boolean alreadyRent(String movieName){
-        return this.movies.contains(movieName);
+        AtomicBoolean isRented = new AtomicBoolean(false);
+        movies.forEach(movie -> {
+            if (("\""+movie.getName()+"\"").equals(movieName)) {
+               isRented.set(true);
+            }
+        });
+        return isRented.get();
     }
 
 

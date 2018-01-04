@@ -6,10 +6,10 @@ set(SOURCE_FILES
         include/connectionHandler.h
         src/connectionHandler.cpp
         src/Client.cpp
-        )
-add_executable(Client ${SOURCE_FILES})
+        src/Task.cpp include/Task.h)
+
 find_package(Boost)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    target_link_libraries(Client Boost::system Boost::thread)
+    add_executable(Client ${SOURCE_FILES})
         endif()

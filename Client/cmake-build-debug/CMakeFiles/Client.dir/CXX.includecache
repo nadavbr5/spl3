@@ -19,6 +19,24 @@ boost/thread.hpp
 /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Client.cpp
 ../include/connectionHandler.h
 /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h
+Task.h
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Task.h
+
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Task.cpp
+Task.h
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Task.h
+
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Task.h
+string
+-
+iostream
+-
+boost/asio.hpp
+-
+boost/thread.hpp
+-
+../include/connectionHandler.h
+/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/include/connectionHandler.h
 
 /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/connectionHandler.cpp
 ../include/connectionHandler.h

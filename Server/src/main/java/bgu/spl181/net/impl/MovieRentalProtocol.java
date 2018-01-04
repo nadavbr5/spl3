@@ -275,7 +275,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private Movie getMovie(String movieName, ArrayList<Movie> movies) {
         AtomicInteger movieIndex = new AtomicInteger(-1);
         movies.forEach(movie -> {
-            if (movie.getName().equals(movieName)) {
+            if (("\""+movie.getName()+"\"").equals(movieName)) {
                 movieIndex.set(movies.indexOf(movie));
             }
         });
