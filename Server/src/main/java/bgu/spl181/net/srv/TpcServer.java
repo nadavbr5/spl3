@@ -4,7 +4,7 @@ package main.java.bgu.spl181.net.srv;
 
 import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
 import main.java.bgu.spl181.net.api.bidi.MessageEncoderDecoder;
-import main.java.bgu.spl181.net.impl.ConnectionsTPC;
+import main.java.bgu.spl181.net.impl.ConnectionsImpl;
 import main.java.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
 
 import java.io.IOException;
@@ -19,19 +19,19 @@ public class TpcServer<T> implements Server<T> {
     private final Supplier<BidiMessagingProtocol<T>> protocolFactory;
     private final Supplier<MessageEncoderDecoder<T>> encdecFactory;
     private ServerSocket sock;
-    private ConnectionsTPC<T> connections;
+    private ConnectionsImpl<T> connections;
     private final AtomicInteger id = new AtomicInteger();
 
     public TpcServer(
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T>> encdecFactory,ConnectionsTPC connectionsTPC) {
+            Supplier<MessageEncoderDecoder<T>> encdecFactory, ConnectionsImpl connectionsImpl) {
 
         this.port = port;
         this.protocolFactory = protocolFactory;
         this.encdecFactory = encdecFactory;
         this.sock = null;
-        connections = connectionsTPC;
+        connections = connectionsImpl;
     }
 
     @Override
