@@ -4,13 +4,14 @@ package main.java.bgu.spl181.net.impl;
 
 import main.java.bgu.spl181.net.api.bidi.Connections;
 import main.java.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
+import main.java.bgu.spl181.net.srv.bidi.ConnectionHandler;
 
 import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class ConnectionsTPC<T> implements Connections<T> {
-private ConcurrentHashMap<Integer,BlockingConnectionHandler<T>> map=new ConcurrentHashMap<>();
+public class ConnectionsImpl<T> implements Connections<T> {
+private ConcurrentHashMap<Integer,ConnectionHandler<T>> map=new ConcurrentHashMap<>();
 
     @Override
 
@@ -27,7 +28,7 @@ private ConcurrentHashMap<Integer,BlockingConnectionHandler<T>> map=new Concurre
 
     @Override
     public boolean disconnect(int connectionId) {
-        BlockingConnectionHandler handler = map.remove(connectionId);
+        ConnectionHandler handler = map.remove(connectionId);
         if (handler != null) {
             try {
                 handler.close();
@@ -40,7 +41,7 @@ private ConcurrentHashMap<Integer,BlockingConnectionHandler<T>> map=new Concurre
     }
 
     //returns null if the connection doest exists in the system
-    public boolean connect(int connectionId, BlockingConnectionHandler<T> b) {
+    public boolean connect(int connectionId, ConnectionHandler<T> b) {
         return this.map.putIfAbsent(connectionId, b) == null;
     }
 

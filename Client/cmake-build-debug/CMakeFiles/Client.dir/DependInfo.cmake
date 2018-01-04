@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/Client.cpp" "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Client.cpp.o"
-  "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/src/connectionHandler.cpp" "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/Client.dir/src/connectionHandler.cpp.o"
+  "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/src/Client.cpp" "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/Client.dir/src/Client.cpp.o"
+  "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/src/connectionHandler.cpp" "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/Client.dir/src/connectionHandler.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

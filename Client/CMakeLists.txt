@@ -7,9 +7,9 @@ set(SOURCE_FILES
         src/connectionHandler.cpp
         src/Client.cpp
         )
-add_executable(Client ${SOURCE_FILES})
+
 find_package(Boost)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
-    target_link_libraries(Client Boost::system Boost::thread)
+    add_executable(Client ${SOURCE_FILES})
         endif()

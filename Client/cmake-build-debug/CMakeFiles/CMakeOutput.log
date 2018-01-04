@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/3.8.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c7348/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c7348.dir/build.make CMakeFiles/cmTC_c7348.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c7348.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_c7348.dir/testCCompiler.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_c7348
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7348.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_c7348.dir/testCCompiler.c.o  -o cmTC_c7348 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_68ea8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_68ea8.dir/build.make CMakeFiles/cmTC_68ea8.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_68ea8.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_68ea8.dir/testCCompiler.c.o   -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_68ea8
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68ea8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_68ea8.dir/testCCompiler.c.o  -o cmTC_68ea8 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d0327/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d0327.dir/build.make CMakeFiles/cmTC_d0327.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o   -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_d0327
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0327.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o  -o cmTC_d0327 
+Run Build Command:"/usr/bin/make" "cmTC_f905e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f905e.dir/build.make CMakeFiles/cmTC_f905e.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o   -c /users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_f905e
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f905e.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o  -o cmTC_f905e 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -59,23 +59,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d0327' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPh5pZe.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_d0327 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f905e' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmxpVD0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_f905e /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_d0327/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_d0327.dir/build.make CMakeFiles/cmTC_d0327.dir/build]
-  ignore line: [make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o   -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_d0327]
-  ignore line: [/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0327.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o  -o cmTC_d0327 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f905e/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f905e.dir/build.make CMakeFiles/cmTC_f905e.dir/build]
+  ignore line: [make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o   -c /users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_f905e]
+  ignore line: [/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f905e.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o  -o cmTC_f905e ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -85,13 +85,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d0327' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPh5pZe.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_d0327 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f905e' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmxpVD0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_f905e /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccPh5pZe.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmxpVD0.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d0327] ==> ignore
+    arg [cmTC_f905e] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -120,7 +120,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_d0327.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_f905e.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -132,10 +132,6 @@ Parsed C implicit link information from above output:
     arg [--no-as-needed] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
@@ -144,7 +140,7 @@ Parsed C implicit link information from above output:
   collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
-  implicit libs: [c]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
@@ -152,17 +148,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_87c1e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_87c1e.dir/build.make CMakeFiles/cmTC_87c1e.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_87c1e.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_87c1e.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_87c1e
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87c1e.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_87c1e.dir/feature_tests.c.o  -o cmTC_87c1e 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_95a48/fast"
+/usr/bin/make -f CMakeFiles/cmTC_95a48.dir/build.make CMakeFiles/cmTC_95a48.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_95a48.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_95a48.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_95a48
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95a48.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_95a48.dir/feature_tests.c.o  -o cmTC_95a48 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -172,17 +168,17 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_65079/fast"
-/usr/bin/make -f CMakeFiles/cmTC_65079.dir/build.make CMakeFiles/cmTC_65079.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_65079.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_65079.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_65079
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65079.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_65079.dir/feature_tests.c.o  -o cmTC_65079 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_8b589/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8b589.dir/build.make CMakeFiles/cmTC_8b589.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8b589.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_8b589.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8b589
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b589.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_8b589.dir/feature_tests.c.o  -o cmTC_8b589 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -192,17 +188,17 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5b1b1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5b1b1.dir/build.make CMakeFiles/cmTC_5b1b1.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5b1b1.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_5b1b1.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5b1b1
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b1b1.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_5b1b1.dir/feature_tests.c.o  -o cmTC_5b1b1 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2a29e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2a29e.dir/build.make CMakeFiles/cmTC_2a29e.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2a29e.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_2a29e.dir/feature_tests.c.o   -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_2a29e
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a29e.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_2a29e.dir/feature_tests.c.o  -o cmTC_2a29e 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -210,30 +206,30 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d36de/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d36de.dir/build.make CMakeFiles/cmTC_d36de.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d36de.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_d36de.dir/testCXXCompiler.cxx.o -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_d36de
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d36de.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_d36de.dir/testCXXCompiler.cxx.o  -o cmTC_d36de 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_d3aae/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d3aae.dir/build.make CMakeFiles/cmTC_d3aae.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d3aae.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_d3aae.dir/testCXXCompiler.cxx.o -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_d3aae
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3aae.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_d3aae.dir/testCXXCompiler.cxx.o  -o cmTC_d3aae 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_33cea/fast"
-/usr/bin/make -f CMakeFiles/cmTC_33cea.dir/build.make CMakeFiles/cmTC_33cea.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_33cea
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33cea.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_33cea 
+Run Build Command:"/usr/bin/make" "cmTC_41c56/fast"
+/usr/bin/make -f CMakeFiles/cmTC_41c56.dir/build.make CMakeFiles/cmTC_41c56.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o -c /users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_41c56
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41c56.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_41c56 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
@@ -243,23 +239,23 @@ Thread model: posix
 gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_33cea' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKFf6ak.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_33cea /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_41c56' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cclHADP1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_41c56 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_33cea/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_33cea.dir/build.make CMakeFiles/cmTC_33cea.dir/build]
-  ignore line: [make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_33cea]
-  ignore line: [/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33cea.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_33cea ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_41c56/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_41c56.dir/build.make CMakeFiles/cmTC_41c56.dir/build]
+  ignore line: [make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o -c /users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_41c56]
+  ignore line: [/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_41c56.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_41c56 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
@@ -269,13 +265,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_33cea' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKFf6ak.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_33cea /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_41c56' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cclHADP1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_41c56 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccKFf6ak.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cclHADP1.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -292,7 +288,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_33cea] ==> ignore
+    arg [cmTC_41c56] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -304,7 +300,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_33cea.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_41c56.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -314,10 +310,6 @@ Parsed CXX implicit link information from above output:
     arg [-lgcc] ==> lib [gcc]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  remove lib [gcc_s]
-  remove lib [gcc]
-  remove lib [gcc_s]
-  remove lib [gcc]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
@@ -326,7 +318,7 @@ Parsed CXX implicit link information from above output:
   collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
   collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
-  implicit libs: [stdc++;m;c]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
@@ -334,17 +326,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e1759/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e1759.dir/build.make CMakeFiles/cmTC_e1759.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e1759.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_e1759.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e1759
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1759.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_e1759.dir/feature_tests.cxx.o  -o cmTC_e1759 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2fc33/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2fc33.dir/build.make CMakeFiles/cmTC_2fc33.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2fc33.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_2fc33.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2fc33
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fc33.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_2fc33.dir/feature_tests.cxx.o  -o cmTC_2fc33 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -407,17 +399,17 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_48990/fast"
-/usr/bin/make -f CMakeFiles/cmTC_48990.dir/build.make CMakeFiles/cmTC_48990.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_48990.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_48990.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_48990
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48990.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_48990.dir/feature_tests.cxx.o  -o cmTC_48990 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_d1d74/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d1d74.dir/build.make CMakeFiles/cmTC_d1d74.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d1d74.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_d1d74.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d1d74
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1d74.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_d1d74.dir/feature_tests.cxx.o  -o cmTC_d1d74 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -480,17 +472,17 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_80df7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_80df7.dir/build.make CMakeFiles/cmTC_80df7.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_80df7.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_80df7.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_80df7
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80df7.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_80df7.dir/feature_tests.cxx.o  -o cmTC_80df7 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_2fc6d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2fc6d.dir/build.make CMakeFiles/cmTC_2fc6d.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2fc6d.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_2fc6d.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2fc6d
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2fc6d.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_2fc6d.dir/feature_tests.cxx.o  -o cmTC_2fc6d 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -553,17 +545,17 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d7c4b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d7c4b.dir/build.make CMakeFiles/cmTC_d7c4b.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d7c4b.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_d7c4b.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d7c4b
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7c4b.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_d7c4b.dir/feature_tests.cxx.o  -o cmTC_d7c4b 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_732dd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_732dd.dir/build.make CMakeFiles/cmTC_732dd.dir/build
+make[1]: Entering directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_732dd.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_732dd.dir/feature_tests.cxx.o -c /users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_732dd
+/users/studs/bsc/2016/nadavbr/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.4127.32/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_732dd.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_732dd.dir/feature_tests.cxx.o  -o cmTC_732dd 
+make[1]: Leaving directory '/users/studs/bsc/2016/nadavbr/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -623,31 +615,3 @@ make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Clien
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_065f4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_065f4.dir/build.make CMakeFiles/cmTC_065f4.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_065f4.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_065f4.dir/CheckIncludeFile.c.o   -c /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_065f4
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_065f4.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_065f4.dir/CheckIncludeFile.c.o  -o cmTC_065f4 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-
-
-Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_afe74/fast"
-/usr/bin/make -f CMakeFiles/cmTC_afe74.dir/build.make CMakeFiles/cmTC_afe74.dir/build
-make[1]: Entering directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_afe74.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_afe74.dir/CheckFunctionExists.c.o   -c /users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CheckFunctionExists.c
-Linking C executable cmTC_afe74
-/users/studs/bsc/2016/nogakl/Downloads/clion-2017.2.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_afe74.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_afe74.dir/CheckFunctionExists.c.o  -o cmTC_afe74 -lpthread 
-make[1]: Leaving directory '/users/studs/bsc/2016/nogakl/IdeaProjects/spl3/Client/cmake-build-debug/CMakeFiles/CMakeTmp'
-
-

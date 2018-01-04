@@ -2,10 +2,8 @@ package main.java.bgu.spl181.net.impl.BBtpc;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import main.java.bgu.spl181.net.impl.ConnectionsTPC;
 import main.java.bgu.spl181.net.impl.Movie;
 import main.java.bgu.spl181.net.impl.User;
-import main.java.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
 
 import java.io.File;
 import java.io.FileReader;
@@ -18,17 +16,17 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SharedProtocolData<T>{
     private ConcurrentHashMap<Integer,String> loggedInUsers = new ConcurrentHashMap<>();
-    private ConnectionsTPC connectionsTPC;
+    private main.java.bgu.spl181.net.impl.ConnectionsImpl connectionsImpl;
     protected Gson gson= new Gson();
     private final String usersPath = "Server/Database/Users.json";
     private final String moviesPath = "Server/Database/Movies.json";
 
-    public SharedProtocolData(ConnectionsTPC connectionsTPC) {
-    this.connectionsTPC=connectionsTPC;
+    public SharedProtocolData(main.java.bgu.spl181.net.impl.ConnectionsImpl connectionsImpl) {
+    this.connectionsImpl = connectionsImpl;
     }
     public boolean broadcastLoggedIn(T msg) {
         AtomicBoolean sentToAll = new AtomicBoolean(true);
-        loggedInUsers.keySet().forEach((connectionId) -> sentToAll.compareAndSet(true, connectionsTPC.send(connectionId,msg)));
+        loggedInUsers.keySet().forEach((connectionId) -> sentToAll.compareAndSet(true, connectionsImpl.send(connectionId,msg)));
         return sentToAll.get();
     }
 
