@@ -1,10 +1,10 @@
 CFLAGS:=-c -Wall -Weffc++ -g -std=c++11 -Iinclude
 LDFLAGS:= -lboost_system -lboost_thread
 
-all: Client
-	g++ bin/connectionHandler.o bin/client.o bin/task.o $(LDFLAGS) -o bin/Client
+all: BBclient
+	g++ bin/connectionHandler.o bin/client.o bin/task.o $(LDFLAGS) -o bin/BBclient
 
-Client: bin/connectionHandler.o bin/client.o bin/task.o
+BBclient: bin/connectionHandler.o bin/client.o bin/task.o
 
 bin/connectionHandler.o: src/connectionHandler.cpp
 	g++ $(CFLAGS) src/connectionHandler.cpp -o bin/connectionHandler.o

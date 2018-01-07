@@ -27,11 +27,11 @@ void Task::run() {
         // we filled up to the \n char - we must make sure now that a 0 char is also present. So we truncate last character.
         answer.resize(len - 1);
 
-            std::cout << "< " << answer << " " << len << " bytes " << std::endl << std::endl;
+            std::cout << answer << std::endl;
             if (answer == "ACK signout succeeded") {
                 std::cout << "Exiting...\n" << std::endl;
                 shouldTerminate->store(true);
-                return;
+                std::terminate();
             }
     }
 

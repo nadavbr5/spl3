@@ -2,7 +2,7 @@ package main.java.bgu.spl181.net.srv;
 
 import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
 import main.java.bgu.spl181.net.api.bidi.MessageEncoderDecoder;
-
+import java.util.concurrent.atomic.AtomicInteger;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.ClosedSelectorException;
@@ -12,6 +12,7 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.function.Supplier;
+import main.java.bgu.spl181.net.impl.ConnectionsImpl;
 
 public class Reactor<T> implements Server<T> {
 
@@ -20,6 +21,8 @@ public class Reactor<T> implements Server<T> {
     private final Supplier<MessageEncoderDecoder<T>> readerFactory;
     private final ActorThreadPool pool;
     private Selector selector;
+    private final AtomicInteger id = new AtomicInteger();
+    private ConnectionsImpl<T> connections;
 
     private Thread selectorThread;
     private final ConcurrentLinkedQueue<Runnable> selectorTasks = new ConcurrentLinkedQueue<>();
@@ -28,12 +31,13 @@ public class Reactor<T> implements Server<T> {
             int numThreads,
             int port,
             Supplier<BidiMessagingProtocol<T>> protocolFactory,
-            Supplier<MessageEncoderDecoder<T>> readerFactory) {
+            Supplier<MessageEncoderDecoder<T>> readerFactory,ConnectionsImpl connectionsImpl) {
 
         this.pool = new ActorThreadPool(numThreads);
         this.port = port;
         this.protocolFactory = protocolFactory;
         this.readerFactory = readerFactory;
+        this.connections=connectionsImpl;
     }
 
     @Override
@@ -100,7 +104,8 @@ public class Reactor<T> implements Server<T> {
                 readerFactory.get(),
                 protocolFactory.get(),
                 clientChan,
-                this);
+                this,this.connections,id.get());
+        connections.connect(id.getAndIncrement(),connections);
         clientChan.register(selector, SelectionKey.OP_READ, handler);
     }
 

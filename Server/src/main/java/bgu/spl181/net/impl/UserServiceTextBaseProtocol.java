@@ -15,7 +15,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
 
     protected boolean done;
     protected int connectionId;
-    protected ConnectionsTPC connections;
+    protected ConnectionsImpl connections;
     protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock();
     protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock();
     protected ArrayList<String> msg;
@@ -31,7 +31,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     public void start(int connectionId, Connections connections) {
         done = false;
         this.connectionId = connectionId;
-        this.connections = (ConnectionsTPC) connections;
+        this.connections = (ConnectionsImpl) connections;
         response = null;
     }
 
