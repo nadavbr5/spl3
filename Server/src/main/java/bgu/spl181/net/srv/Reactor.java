@@ -22,7 +22,7 @@ public class Reactor<T> implements Server<T> {
     private final ActorThreadPool pool;
     private Selector selector;
     private final AtomicInteger id = new AtomicInteger();
-    private ConnectionsImpl<T> connections;
+    private ConnectionsImpl connections;
 
     private Thread selectorThread;
     private final ConcurrentLinkedQueue<Runnable> selectorTasks = new ConcurrentLinkedQueue<>();
@@ -105,13 +105,14 @@ public class Reactor<T> implements Server<T> {
                 protocolFactory.get(),
                 clientChan,
                 this,this.connections,id.get());
-        connections.connect(id.getAndIncrement(),connections);
+        connections.connect(id.getAndIncrement(),handler);
         clientChan.register(selector, SelectionKey.OP_READ, handler);
     }
 
     private void handleReadWrite(SelectionKey key) {
         NonBlockingConnectionHandler handler = (NonBlockingConnectionHandler) key.attachment();
-
+        if(handler.isClosed())
+            return;
         if (key.isReadable()) {
             Runnable task = handler.continueRead();
             if (task != null) {

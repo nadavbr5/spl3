@@ -102,7 +102,6 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
     private String balanceAddProcess(){
         //assuming that amount is greater than 0
-        System.out.println(msg.toString());
         int amount= Integer.parseInt(msg.remove(0));
         String [] userDetails= new String[2];
         userDetails[0]=sharedProtocolData.getNameByConnectionId(connectionId);
@@ -328,8 +327,8 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         try{
             //if the movie exists in the system and the user rented this movie
             if (movie != null && user.alreadyRent(movieName)){
-                movie.returnMovie();
                 user.remMovie(movie);
+                movie.returnMovie();
                 sharedProtocolData.broadcastLoggedIn("BROADCAST movie " + movieName +" "+ Integer.toString(movie.getAvailableAmount()) +" "+ Integer.toString(movie.getPrice()));
                 return "ACK return " + movieName + " success";
             }
@@ -354,7 +353,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
         //fail- the user's type is normal
         try {
-            if(!user.isAdmin()){
+            if(user.isAdmin()){
                 return user;
             }
             else return null;

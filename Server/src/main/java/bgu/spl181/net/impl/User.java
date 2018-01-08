@@ -2,6 +2,7 @@ package main.java.bgu.spl181.net.impl;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
 
@@ -76,6 +77,12 @@ public class User {
     }
 
     public boolean remMovie(Movie m){
-        return this.movies.remove(m);
+        AtomicInteger movieIndex = new AtomicInteger(-1);
+        movies.forEach(movie -> {
+            if ((movie.getName()).equals(m.getName())) {
+                movieIndex.set(movies.indexOf(movie));
+            }
+        });
+        return (movieIndex.get() != -1 && movies.remove(movieIndex.get()) != null);
     }
 }
