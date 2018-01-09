@@ -18,7 +18,7 @@ class Task {
 private:
     boost::mutex *mutex;
     ConnectionHandler *connectionHandler;
-    std::atomic<bool> *shouldTerminate;
+    std::atomic<bool> *isLoggedIn;
 public:
     Task(boost::mutex *mutex, ConnectionHandler *connectionHandler, std::atomic<bool> *pAtomic);
 

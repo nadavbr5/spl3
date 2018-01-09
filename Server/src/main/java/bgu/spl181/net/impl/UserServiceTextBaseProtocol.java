@@ -16,8 +16,8 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     protected boolean done;
     protected int connectionId;
     protected ConnectionsImpl connections;
-    protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock();
-    protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock();
+    protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock(true);
+    protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock(true);
     protected ArrayList<String> msg;
     protected SharedProtocolData sharedProtocolData;
     protected String response;
@@ -25,6 +25,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
 
     public UserServiceTextBaseProtocol(SharedProtocolData sharedProtocolData) {
         this.sharedProtocolData = sharedProtocolData;
+
     }
 
     @Override

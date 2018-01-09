@@ -5,11 +5,11 @@
 #include "../include/Task.h"
 
 Task::Task(boost::mutex *mutex, ConnectionHandler *connectionHandler, std::atomic<bool> *pAtomic)
-        : mutex(mutex), connectionHandler(connectionHandler),shouldTerminate(pAtomic) {
+        : mutex(mutex), connectionHandler(connectionHandler), isLoggedIn(pAtomic) {
 }
 
 void Task::run() {
-    while (!shouldTerminate->load()) {
+    while (1) {
         // We can use one of three options to read data from the server:
         // 1. Read a fixed number of characters
         // 2. Read a line (up to the newline character using the getline() buffered reader
@@ -27,12 +27,14 @@ void Task::run() {
         // we filled up to the \n char - we must make sure now that a 0 char is also present. So we truncate last character.
         answer.resize(len - 1);
 
-            std::cout << answer << std::endl;
-            if (answer == "ACK signout succeeded") {
-                std::cout << "Exiting...\n" << std::endl;
-                shouldTerminate->store(true);
-                std::terminate();
-            }
+        std::cout << answer << std::endl;
+        if (answer == "ACK login succeeded")
+            isLoggedIn->store(true);
+        if (answer == "ACK signout succeeded") {
+            connectionHandler->close();
+            return;
+
+        }
     }
 
 }

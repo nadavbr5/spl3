@@ -90,6 +90,7 @@ public class Reactor<T> implements Server<T> {
             key.interestOps(ops);
         } else {
             selectorTasks.add(() -> {
+                if (key.isValid())
                 key.interestOps(ops);
             });
             selector.wakeup();

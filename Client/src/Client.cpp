@@ -2,12 +2,14 @@
 #include "../include/connectionHandler.h"
 #include "../include/Task.h"
 
+void readInput(const std::atomic<bool> &isLoggedIn, ConnectionHandler &connectionHandler);
+
 /**
 * This code assumes that the server replies the exact text the client sent it (as opposed to the practical session example)
 */
 int main (int argc, char *argv[]) {
     boost::mutex mutex;
-    std::atomic<bool> shouldTerminate(false);
+    std::atomic<bool> isLoggedIn(false);
     if (argc < 3) {
         std::cerr << "Usage: " << argv[0] << " host port" << std::endl << std::endl;
         return -1;
@@ -20,24 +22,30 @@ int main (int argc, char *argv[]) {
         std::cerr << "Cannot connect to " << host << ":" << port << std::endl;
         return 1;
     }
-    Task task(&mutex, &connectionHandler, &shouldTerminate);
+    Task task(&mutex, &connectionHandler, &isLoggedIn);
     boost::thread thread2(&Task::run, &task);
     //From here we will see the rest of the ehco client implementation:
-    while (!shouldTerminate.load()) {
+    readInput(isLoggedIn, connectionHandler);
+    thread2.join();
+        return 0;
+    }
+
+void readInput(const std::atomic<bool> &isLoggedIn, ConnectionHandler &connectionHandler) {
+    while (1) {
         const short bufsize = 1024;
         char buf[bufsize];
         std::cin.getline(buf, bufsize);
-        std::string line(buf);
+        std::__cxx11::string line(buf);
         int len = line.length();
         if (!connectionHandler.sendLine(line)) {
 //                std::cout << "Disconnected. Exiting...\n" << std::endl;
-            break;
+            return;
         }
-
         // connectionHandler.sendLine(line) appends '\n' to the message. Therefor we send len+1 bytes.
         //TODO: change
         std::cout << "Sent " << len + 1 << " bytes to server" << std::endl;
+        if(isLoggedIn.load()&& line == "SIGNOUT")
+            return;
     }
-        return 0;
-    }
+}
 

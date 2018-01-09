@@ -9,8 +9,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
+    private String broadcastMessage;
     public MovieRentalProtocol(SharedProtocolData sharedProtocolData) {
         super(sharedProtocolData);
+        broadcastMessage = "";
     }
 
     //TODO: check if the name saved with "" - if not we need to change the stirngs
@@ -22,63 +24,68 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
     @Override
     public void process(String message) {
-       super.process(message);
-        if(response.equals("CONTINUE")){
-            switch ((!msg.isEmpty()? msg.remove(0):"" )){
-                case "balance":{
-                    switch ((!msg.isEmpty()? msg.remove(0):"" )){
-                        case "info":{
-                            response=isLoggedIn? balanceInfoProcess():"ERROR request balance info failed";
+        super.process(message);
+        if (response.equals("CONTINUE")) {
+            switch ((!msg.isEmpty() ? msg.remove(0) : "")) {
+                case "balance": {
+                    switch ((!msg.isEmpty() ? msg.remove(0) : "")) {
+                        case "info": {
+                            response = isLoggedIn ? balanceInfoProcess() : "ERROR request balance info failed";
                             break;
                         }
-                        case "add":{
-                            response= isLoggedIn? balanceAddProcess():"ERROR request balance info failed";
+                        case "add": {
+                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance info failed";
                             break;
                         }
                     }
                     break;
                 }
                 case "info": {
-                    response=isLoggedIn? infoProcess(): "ERROR request info failed";
+                    response = isLoggedIn ? infoProcess() : "ERROR request info failed";
                     break;
                 }
-                case  "rent" :{
-                    response=isLoggedIn? rentProcess(): "ERROR request rent failed";
+                case "rent": {
+                    response = isLoggedIn ? rentProcess() : "ERROR request rent failed";
                     break;
                 }
-                case "return":{
-                    response=isLoggedIn? returnProcess(): "ERROR request return failed";
+                case "return": {
+                    response = isLoggedIn ? returnProcess() : "ERROR request return failed";
                     break;
                 }
-                case "addmovie" :{
-                    response=isLoggedIn? addMovieProcess():"ERROR request addmovie failed";
+                case "addmovie": {
+                    response = isLoggedIn ? addMovieProcess() : "ERROR request addmovie failed";
                     break;
                 }
-                case "remmovie":{
-                    response=isLoggedIn? remMovieProcess():"ERROR request remmovie failed";
+                case "remmovie": {
+                    response = isLoggedIn ? remMovieProcess() : "ERROR request remmovie failed";
                     break;
                 }
-                case "changeprice":{
-                    response=isLoggedIn? changePriceProcess():"ERROR request changeprice failed";
+                case "changeprice": {
+                    response = isLoggedIn ? changePriceProcess() : "ERROR request changeprice failed";
                     break;
                 }
-                case "REGISTER":{
-                    response=addCountryProcess();
+                case "REGISTER": {
+                    response = addCountryProcess();
                     break;
                 }
             }
             connections.send(connectionId, response);
+            if(!broadcastMessage.equals(""))
+                sharedProtocolData.broadcastLoggedIn(new String(broadcastMessage));
+            broadcastMessage = "";
+
         }
 
     }
 
     private String addCountryProcess() {
         //TODO: change this string 'country= ... ' to the name of the country
-        String userName= this.msg.remove(0);
-        String country= this.msg.remove(0);
+        String userName = this.msg.remove(0);
+        String datablock = this.msg.remove(0);
+        String country = datablock.substring(9, datablock.length() - 1);
         usersLock.writeLock().lock();
-        ArrayList<User> users= sharedProtocolData.getUsers();
-        User user=getUser(userName,users);
+        ArrayList<User> users = sharedProtocolData.getUsers();
+        User user = getUser(userName, users);
         user.setCountry(country);
         users.add(user);
         sharedProtocolData.updateUsers(users);
@@ -86,57 +93,56 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         return "ACK registration succeeded";
     }
 
-    private String balanceInfoProcess(){
-       usersLock.readLock().lock();
-        ArrayList<User> users= sharedProtocolData.getUsers();
-        String userName= sharedProtocolData.getNameByConnectionId(connectionId);
-        String[] ans={""};
+    private String balanceInfoProcess() {
+        usersLock.readLock().lock();
+        ArrayList<User> users = sharedProtocolData.getUsers();
+        String userName = sharedProtocolData.getNameByConnectionId(connectionId);
+        String[] ans = {""};
         users.forEach(user -> {
-            if(user.getName().equals(userName)){
-                ans[0]= "ACK balance "+ Integer.toString(user.getBalance());
+            if (user.getName().equals(userName)) {
+                ans[0] = "ACK balance " + Integer.toString(user.getBalance());
             }
         });
         usersLock.readLock().unlock();
         return ans[0];
     }
 
-    private String balanceAddProcess(){
+    private String balanceAddProcess() {
         //assuming that amount is greater than 0
-        int amount= Integer.parseInt(msg.remove(0));
-        String [] userDetails= new String[2];
-        userDetails[0]=sharedProtocolData.getNameByConnectionId(connectionId);
+        int amount = Integer.parseInt(msg.remove(0));
+        String[] userDetails = new String[2];
+        userDetails[0] = sharedProtocolData.getNameByConnectionId(connectionId);
         usersLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
         users.forEach(user -> {
-            if(user.getName().equals(userDetails[0])){
+            if (user.getName().equals(userDetails[0])) {
                 user.increaseBalance(amount);
-                userDetails[1]=Integer.toString(user.getBalance());
+                userDetails[1] = Integer.toString(user.getBalance());
             }
         });
         sharedProtocolData.updateUsers(users);
         usersLock.writeLock().unlock();
-        return "ACK balance "+userDetails[1]+" added "+ amount;
+        return "ACK balance " + userDetails[1] + " added " + amount;
     }
 
-    private String infoProcess(){
-        String movieName= (!msg.isEmpty() ?msg.remove(0):"");
-        AtomicReference<String> res= new AtomicReference<>("ACK info ");
+    private String infoProcess() {
+        String movieName = (!msg.isEmpty() ? msg.remove(0) : "");
+        AtomicReference<String> res = new AtomicReference<>("ACK info ");
         //case 1: we need to send the info of all the movies
         moviesLock.readLock().lock();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
-        if(movieName.equals("")){
+        if (movieName.equals("")) {
             movies.forEach((movie) -> {
-                res.set(res.get() + " \""+movie.getName()+"\"");
+                res.set(res.get() + " \"" + movie.getName() + "\"");
             });
-        }
-        else{
+        } else {
             movies.forEach(movie -> {
-                if(("\"" + movie.getName() + "\"").equals(movieName))
-                    res.set(res.get()+"\""+movie.toString()+"\"");
+                if (("\"" + movie.getName() + "\"").equals(movieName))
+                    res.set(res.get() + " " + movie.toString());
             });
         }
         moviesLock.readLock().unlock();
-        if(res.get().equals("ACK info "))
+        if (res.get().equals("ACK info "))
             return "ERROR info failed";
         return res.get();
     }
@@ -154,57 +160,62 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         return rent(movieName, users, movies, user, movie);
     }
 
-    private String returnProcess(){
+    private String returnProcess() {
         //fail- the user not renting the movie or the movie doesn't exist
         String movieName = msg.remove(0);
-            String userName = sharedProtocolData.getNameByConnectionId(connectionId);
+        String userName = sharedProtocolData.getNameByConnectionId(connectionId);
         usersLock.writeLock().lock();
         moviesLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
         User user = getUser(userName, users);
         Movie movie = getMovie(movieName, movies);
-        return returnMovie(movieName,users,movies,user,movie);
+        return returnMovie(movieName, users, movies, user, movie);
 
     }
 
-    private String addMovieProcess(){
+    private String addMovieProcess() {
+        msg.replaceAll(s -> {
+            if (s.startsWith("\""))
+                return s.substring(1, s.length() - 1);
+            return s;
+        });
         String movieName = msg.remove(0);
         String userName = sharedProtocolData.getNameByConnectionId(connectionId);
-        int amount= new Integer(msg.remove(0));
-        int price= new Integer(msg.remove(0));
+        int amount = new Integer(msg.remove(0));
+        int price = new Integer(msg.remove(0));
         ArrayList<String> bannedCountries = new ArrayList<>();
-        msg.forEach(m->{
-            if(m!=null)
+        msg.forEach(m -> {
+            if (m != null)
                 bannedCountries.add(m);
         });
 
         //fail- the price or the amount isn't valid
-        if(price <=0 | amount <= 0)
+        if (price <= 0 | amount <= 0)
             return "ERROR request addmovie failed";
 
         //fail- the user's type is 'normal'
-        User user= isAdmin(userName);
-        if(user == null){
+        User user = isAdmin(userName);
+        if (user == null) {
             return "ERROR request addmovie failed";
         }
         moviesLock.writeLock().lock();
-        ArrayList<Movie> movies= sharedProtocolData.getMovies();
+        ArrayList<Movie> movies = sharedProtocolData.getMovies();
         Movie isExist = getMovie(movieName, movies);
 
         //fail- movieName exits in the system
-        if(isExist != null) {
+        if (isExist != null) {
             moviesLock.writeLock().unlock();
             return "ERROR request addmovie failed";
         }
 
-        Movie addMovie= new Movie(movieName, price, bannedCountries, amount);
+        Movie addMovie = new Movie(movieName, price, bannedCountries, amount);
         movies.add(addMovie);
         sharedProtocolData.updateMovies(movies);
-        sharedProtocolData.broadcastLoggedIn("BROADCAST movie "+movieName+" "+ amount + " " + price);
+        broadcastMessage="BROADCAST movie " + movieName + " " + amount + " " + price;
         moviesLock.writeLock().unlock();
 
-        return  "ACK addmovie " + movieName + " success";
+        return "ACK addmovie " + movieName + " success";
     }
 
     private String remMovieProcess() {
@@ -234,18 +245,18 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
         sharedProtocolData.updateMovies(movies);
         moviesLock.writeLock().unlock();
-        sharedProtocolData.broadcastLoggedIn("BROADCAST movie " + movieName + " removed");
+        broadcastMessage="BROADCAST movie " + movieName + " removed";
         return "ACK remmovie " + movieName + " success";
     }
 
-    private String changePriceProcess(){
+    private String changePriceProcess() {
         String userName = sharedProtocolData.getNameByConnectionId(connectionId);
-        String movieName= msg.remove(0);
+        String movieName = msg.remove(0);
         int price = new Integer(msg.remove(0));
         User user = isAdmin(userName);
 
         //if price is > 0
-        if(price <= 0)
+        if (price <= 0)
             return "ERROR request changeprice failed";
 
         //if the user's type is 'normal'
@@ -266,7 +277,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         movies.add(movie);
         sharedProtocolData.updateMovies(movies);
         moviesLock.writeLock().unlock();
-        sharedProtocolData.broadcastLoggedIn("BROADCAST movie " + movieName + movie.getAvailableAmount() + " " + price);
+        broadcastMessage="BROADCAST movie " + movieName + movie.getAvailableAmount() + " " + price;
         return "ACK changeprice " + movieName + " success";
 
     }
@@ -274,11 +285,11 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private Movie getMovie(String movieName, ArrayList<Movie> movies) {
         AtomicInteger movieIndex = new AtomicInteger(-1);
         movies.forEach(movie -> {
-            if (("\""+movie.getName()+"\"").equals(movieName)) {
+            if (("\"" + movie.getName() + "\"").equals(movieName)) {
                 movieIndex.set(movies.indexOf(movie));
             }
         });
-        return (movieIndex.get()!=-1? movies.remove(movieIndex.get()):null);
+        return (movieIndex.get() != -1 ? movies.remove(movieIndex.get()) : null);
     }
 
     private User getUser(String userName, ArrayList<User> users) {
@@ -294,7 +305,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private String rent(String movieName, ArrayList<User> users, ArrayList<Movie> movies, User user, Movie movie) {
         try {
             //the movie isnt exists in the system or the user already rented this movie
-            if (movie!=null && !user.alreadyRent(movieName)&&!movie.isbannedCountry(user.getCountry())) {
+            if (movie != null && !user.alreadyRent(movieName) && !movie.isbannedCountry(user.getCountry())) {
                 //if the user doesn't live in a banned country of the movie && if the user has enough money
                 if (user.reduceBalance(movie.getPrice())) {
                     //if available amount > 0
@@ -302,7 +313,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
                         //we assume that we succeed renting the movie
                         //broadcast to all Logged-in users
                         user.addMovie(movie);
-                        sharedProtocolData.broadcastLoggedIn("BROADCAST movie " + movieName +" "+ Integer.toString(movie.getAvailableAmount()) +" "+ Integer.toString(movie.getPrice()));
+                        broadcastMessage="BROADCAST movie " + movieName + " " + Integer.toString(movie.getAvailableAmount()) + " " + Integer.toString(movie.getPrice());
                         return "ACK rent " + movieName + " success";
                     } else {
                         user.increaseBalance(movie.getPrice());
@@ -312,7 +323,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
             }
             return "ERROR request rent failed";
         } finally {
-            if (movie!=null) {
+            if (movie != null) {
                 movies.add(movie);
                 sharedProtocolData.updateMovies(movies);
             }
@@ -323,18 +334,17 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         }
     }
 
-    private String returnMovie(String movieName, ArrayList<User> users, ArrayList<Movie> movies, User user, Movie movie){
-        try{
+    private String returnMovie(String movieName, ArrayList<User> users, ArrayList<Movie> movies, User user, Movie movie) {
+        try {
             //if the movie exists in the system and the user rented this movie
-            if (movie != null && user.alreadyRent(movieName)){
+            if (movie != null && user.alreadyRent(movieName)) {
                 user.remMovie(movie);
                 movie.returnMovie();
-                sharedProtocolData.broadcastLoggedIn("BROADCAST movie " + movieName +" "+ Integer.toString(movie.getAvailableAmount()) +" "+ Integer.toString(movie.getPrice()));
+                broadcastMessage="BROADCAST movie " + movieName + " " + Integer.toString(movie.getAvailableAmount()) + " " + Integer.toString(movie.getPrice());
                 return "ACK return " + movieName + " success";
             }
-        }
-        finally {
-            if (movie!=null) {
+        } finally {
+            if (movie != null) {
                 movies.add(movie);
                 sharedProtocolData.updateMovies(movies);
             }
@@ -346,19 +356,17 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         return "ERROR request return failed";
     }
 
-    private User isAdmin(String userName){
+    private User isAdmin(String userName) {
         usersLock.readLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
         User user = getUser(userName, users);
 
         //fail- the user's type is normal
         try {
-            if(user.isAdmin()){
+            if (user.isAdmin()) {
                 return user;
-            }
-            else return null;
-        }
-        finally {
+            } else return null;
+        } finally {
             usersLock.readLock().unlock();
         }
     }

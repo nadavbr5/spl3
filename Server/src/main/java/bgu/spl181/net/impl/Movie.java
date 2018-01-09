@@ -1,6 +1,7 @@
 package main.java.bgu.spl181.net.impl;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Movie {
     private static int id=0;
@@ -55,7 +56,11 @@ public class Movie {
 
     //TODO:: change the function
     public String toString() {
-        return "\""+name+"\" " + availableAmount + " " + totalAmount + " " + bannedCountries.toString();
+        AtomicReference<String> res = new AtomicReference<>("");
+        bannedCountries.forEach(country -> {
+                res.set(res.get() + " " + "\""+country+"\"");
+        });
+        return "\""+name+"\" " + availableAmount + " " + totalAmount + " " + res.get();
 
     }
 

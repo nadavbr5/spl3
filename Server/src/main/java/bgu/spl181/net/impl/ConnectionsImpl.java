@@ -28,16 +28,8 @@ private ConcurrentHashMap<Integer,ConnectionHandler<T>> map=new ConcurrentHashMa
 
     @Override
     public boolean disconnect(int connectionId) {
-        ConnectionHandler handler = map.remove(connectionId);
-        if (handler != null) {
-            try {
-                handler.close();
-                return true;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return false;
+       return map.remove(connectionId)!=null;
+
     }
 
     //returns null if the connection doest exists in the system
