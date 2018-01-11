@@ -127,7 +127,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
     private String infoProcess() {
         String movieName = (!msg.isEmpty() ? msg.remove(0) : "");
-        AtomicReference<String> res = new AtomicReference<>("ACK info ");
+        AtomicReference<String> res = new AtomicReference<>("ACK info");
         //case 1: we need to send the info of all the movies
         moviesLock.readLock().lock();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
@@ -201,7 +201,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         }
         moviesLock.writeLock().lock();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
-        Movie isExist = getMovie(movieName, movies);
+        Movie isExist = getMovie("\"" + movieName + "\"", movies);
 
         //fail- movieName exits in the system
         if (isExist != null) {
@@ -212,10 +212,10 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         Movie addMovie = new Movie(movieName, price, bannedCountries, amount);
         movies.add(addMovie);
         sharedProtocolData.updateMovies(movies);
-        broadcastMessage="BROADCAST movie " + movieName + " " + amount + " " + price;
+        broadcastMessage = "BROADCAST movie " + "\"" + movieName + "\" " + amount + " " + price;
         moviesLock.writeLock().unlock();
 
-        return "ACK addmovie " + movieName + " success";
+        return "ACK addmovie \"" + movieName + "\" success";
     }
 
     private String remMovieProcess() {

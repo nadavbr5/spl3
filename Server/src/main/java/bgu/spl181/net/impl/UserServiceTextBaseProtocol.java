@@ -78,6 +78,8 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             return "ERROR registration failed";
         String userName = this.msg.remove(0);
         String password = this.msg.remove(0);
+        if (isLoggedIn)
+            return "ERROR registration failed";
         //if the user name already exists in the system- returns error
         usersLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();

@@ -1,0 +1,24 @@
+#!/bin/expect -f
+log_user 1
+set timeout -1
+proc Test { command expected error errorMessage } {
+    send_user "TEST----------$command\n"
+    send $command\r
+    expect {
+        -re $expected* { if { [string match "*REQUEST rent*" $command ] || [ string match "REQUEST return*" $command ] || [ string match "REQUEST addmovie*" $command ] || [ string match "REQUEST remmovie*" $command ] || [ string match "REQUEST changeprice*" $command ] } {
+            send_user "TEST------expecting BROADCAST...\n"
+            expect {
+                    -re BROADCAST* { send_user "TEST----------success\n"}
+                }
+            } else {
+                send_user "TEST----------success\n"}
+        }
+        -re $error* {send_user "TEST----------failed: $errorMessage\n"; exit 1}
+        eof {exit 0}
+    }
+}
+spawn bin/BBclient 127.0.0.1 7777
+Test "LOGIN john potato" "ACK login succeeded" "ERROR" "login should be successful"
+Test "REGISTER nadav brama country=\"israel\"" "ERROR registration failed" "ACK" "registration should fail-client is already logged in"
+Test "REQUEST rent \"Justice League\"" "ACK rent \"Justice League\" success" "ERROR" "rent should be successful"
+Test "SIGNOUT" "ACK signout succeeded" "ERROR" "sould signout and close"
