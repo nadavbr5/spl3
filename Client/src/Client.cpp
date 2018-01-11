@@ -19,7 +19,6 @@ int main (int argc, char *argv[]) {
 
     ConnectionHandler connectionHandler(host, port);
     if (!connectionHandler.connect()) {
-        std::cerr << "Cannot connect to " << host << ":" << port << std::endl;
         return 1;
     }
     Task task(&mutex, &connectionHandler, &isLoggedIn);
@@ -43,7 +42,6 @@ void readInput(const std::atomic<bool> &isLoggedIn, ConnectionHandler &connectio
         }
         // connectionHandler.sendLine(line) appends '\n' to the message. Therefor we send len+1 bytes.
         //TODO: change
-        std::cout << "Sent " << len + 1 << " bytes to server" << std::endl;
         if(isLoggedIn.load()&& line == "SIGNOUT")
             return;
     }

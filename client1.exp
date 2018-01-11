@@ -1,0 +1,15 @@
+#!/bin/expect -f
+log_user 1
+set timeout -1
+proc Test { command expected error errorMessage } {
+    send_user "TEST----------$command\n"
+    send $command\r
+    expect {
+        $expected {send_user "TEST----------success\n"}
+        -re $error* {send_user "TEST----------failed: $errorMessage\n"; exit 1}
+        eof {exit 0}
+    }
+}
+spawn bin/BBclient 127.0.0.1 7777
+Test "LOGIN john potato" "ACK login succeeded" "ERROR" "login should be successful"
+Test "SIGNOUT" "ACK signout succeeded" "ERROR" "sould signout and close"

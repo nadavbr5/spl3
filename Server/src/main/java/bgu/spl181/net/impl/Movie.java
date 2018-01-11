@@ -1,4 +1,4 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;

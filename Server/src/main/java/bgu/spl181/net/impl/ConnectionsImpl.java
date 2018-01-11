@@ -1,12 +1,9 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 
+import bgu.spl181.net.api.bidi.Connections;
+import bgu.spl181.net.srv.bidi.ConnectionHandler;
 
-import main.java.bgu.spl181.net.api.bidi.Connections;
-import main.java.bgu.spl181.net.srv.bidi.BlockingConnectionHandler;
-import main.java.bgu.spl181.net.srv.bidi.ConnectionHandler;
-
-import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 

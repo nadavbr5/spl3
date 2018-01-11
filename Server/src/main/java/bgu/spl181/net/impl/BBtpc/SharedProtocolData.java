@@ -1,10 +1,10 @@
-package main.java.bgu.spl181.net.impl.BBtpc;
+package bgu.spl181.net.impl.BBtpc;
 
+import bgu.spl181.net.impl.ConnectionsImpl;
+import bgu.spl181.net.impl.Movie;
+import bgu.spl181.net.impl.User;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import main.java.bgu.spl181.net.impl.ConnectionsImpl;
-import main.java.bgu.spl181.net.impl.Movie;
-import main.java.bgu.spl181.net.impl.User;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,8 +19,8 @@ public class SharedProtocolData<T> {
     private ConcurrentHashMap<Integer, String> loggedInUsers = new ConcurrentHashMap<>();
     private ConnectionsImpl connectionsImpl;
     protected Gson gson;
-    private final String usersPath = "Server/Database/Users.json";
-    private final String moviesPath = "Server/Database/Movies.json";
+    private final String usersPath = "Database/Users.json";
+    private final String moviesPath = "Database/Movies.json";
 
     public SharedProtocolData(ConnectionsImpl connectionsImpl) {
         GsonBuilder gsonBuilder = new GsonBuilder();

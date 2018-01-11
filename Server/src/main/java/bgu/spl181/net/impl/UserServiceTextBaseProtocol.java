@@ -1,9 +1,9 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 
-import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
-import main.java.bgu.spl181.net.api.bidi.Connections;
-import main.java.bgu.spl181.net.impl.BBtpc.SharedProtocolData;
+import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.Connections;
+import bgu.spl181.net.impl.BBtpc.SharedProtocolData;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -33,7 +33,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         done = false;
         this.connectionId = connectionId;
         this.connections = (ConnectionsImpl) connections;
-        response = null;
+        response = "";
     }
 
     //if msg is empty at the end of this function that means that the action is 'request'

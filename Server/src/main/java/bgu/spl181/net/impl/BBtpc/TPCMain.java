@@ -1,10 +1,10 @@
-package main.java.bgu.spl181.net.impl.BBtpc;
+package bgu.spl181.net.impl.BBtpc;
 
-import main.java.bgu.spl181.net.impl.ConnectionsImpl;
-import main.java.bgu.spl181.net.impl.EncoderDecoder;
-import main.java.bgu.spl181.net.impl.MovieRentalProtocol;
-import main.java.bgu.spl181.net.srv.Server;
-import main.java.bgu.spl181.net.srv.TpcServer;
+import bgu.spl181.net.impl.ConnectionsImpl;
+import bgu.spl181.net.impl.EncoderDecoder;
+import bgu.spl181.net.impl.MovieRentalProtocol;
+import bgu.spl181.net.srv.Server;
+import bgu.spl181.net.srv.TpcServer;
 
 import java.io.IOException;
 
