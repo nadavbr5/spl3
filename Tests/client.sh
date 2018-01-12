@@ -2,7 +2,7 @@
 cd Client
 make clean
 make
-echo "enter 1 for Admin test or 2 for normal client test"
+echo "enter 1 for Admin test or 2 for admin and then client test or 3 for two clients at the same time"
 select test in Admin1 AdminAndClient 2clientsTheSameTime
 do
 if [ "$test" = "AdminAndClient" ]; then

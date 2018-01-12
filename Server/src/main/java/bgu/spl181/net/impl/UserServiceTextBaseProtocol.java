@@ -88,9 +88,6 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         try {
             if (isRegistered.get())
                 return "ERROR registration failed";
-        } finally {
-            usersLock.writeLock().unlock();
-        }
         User reg = new User(userName, "normal", password, new String());
         users.add(reg);
         sharedProtocolData.updateUsers(users);
@@ -101,6 +98,9 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             this.msg.add(0, "REGISTER");
         }
         return "CONTINUE";
+	 } finally {
+            usersLock.writeLock().unlock();
+        }
     }
 
     private String loginProcess() {
