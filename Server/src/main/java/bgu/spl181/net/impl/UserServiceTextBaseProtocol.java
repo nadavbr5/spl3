@@ -130,7 +130,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             connections.send(connectionId, "ACK signout succeeded");
             connections.disconnect(connectionId);
             return "SIGNOUT";
-        } else return "ERROR logout failed";
+        } else return "ERROR signout failed";
 
     }
 

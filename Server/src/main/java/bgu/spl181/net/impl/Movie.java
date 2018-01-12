@@ -60,7 +60,7 @@ public class Movie {
         bannedCountries.forEach(country -> {
                 res.set(res.get() + " " + "\""+country+"\"");
         });
-        return "\""+name+"\" " + availableAmount + " " + totalAmount + " " + res.get();
+        return "\""+name+"\" " + availableAmount + " " + totalAmount + res.get();
 
     }
 

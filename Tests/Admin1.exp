@@ -2,7 +2,7 @@
 log_user 1
 set timeout -1
 proc Test { command expected error errorMessage } {
-    send_user "TEST----------$command\n"
+    send_user "TEST-Admin----------$command----Expecting- $expected\n"
     send $command\r
     expect {
         -re $expected* { if { [string match "ACK*" $expected ] } { if {[string match "*REQUEST rent*" $command ] || [ string match "REQUEST return*" $command ] || [ string match "REQUEST addmovie*" $command ] || [ string match "REQUEST remmovie*" $command ] || [ string match "REQUEST changeprice*" $command ] } {
@@ -18,6 +18,11 @@ proc Test { command expected error errorMessage } {
     }
 }
 spawn bin/BBclient 127.0.0.1 7777
+Test "REQUEST rent \"dont care\"" "ERROR request rent failed" "ACK" "not loggedin"
+Test "REQUEST return \"dont care\"" "ERROR request return failed" "ACK" "not loggedin"
+Test "REQUEST addmovie \"dont care\" 1 1 \"dont care\"" "ERROR request addmovie failed" "ACK" "not loggedin"
+Test "REQUEST remmovie \"dont care\"" "ERROR request remmovie failed" "ACK" "not loggedin"
+Test "REQUEST changeprice \"dont care\" 50" "ERROR request changeprice failed" "ACK" "not loggedin"
 Test "LOGIN john potato" "ACK login succeeded" "ERROR" "should be successful"
 Test "REQUEST info" "ACK info \"The Godfather\" \"The Pursuit Of Happyness\" \"The Notebook\" \"Justice League\"" "ERROR" "should be successful"
 Test "REQUEST balance info" "ACK balance 0" "ERROR" "should be successful"

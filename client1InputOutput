@@ -1,6 +1,9 @@
 LOGIN client1 client1 -not loggedin -ERROR login failed 
 REGISTER client1 client1 country="iran" -success -ACK registration succeeded
 LOGIN client1 client1 -success -ACK login succeeded
+
+LOGIN client1 client1 -already loggedin -ERROR login failed
+
 REQUEST addmovie "not admin" 1 1 -user is not admin -ERROR request addmovie failed
 REQUEST remmovie "movie1" -user is not admin -ERROR request remmovie failed
 REQUEST changeprice "movie1" 2 -user is not admin -ERROR request changeprice failed
@@ -17,6 +20,7 @@ REQUEST info -success -ACK info "The Godfather" "The Pursuit Of Happyness" "The 
 REQUEST info "movie1" -success -ACK info "movie1" 1 10 "iran" "israel"
 REQUEST info "movie3" -success -ACK info "movie3" 1 1
 REQUEST info "does not exists" -movie is not in the system -ERROR request info failed
+REQUEST return "does not exists" -movie is not in the system -ERROR request return failed
 REQUEST rent "high price" -client1 have less than 100 balance -ERROR request rent failed
 REQUEST rent "The Notebook" -no copies available -ERROR request rent failed
 SIGNOUT -success -ACK signout succeeded

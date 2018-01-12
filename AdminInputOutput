@@ -1,3 +1,9 @@
+REQUEST rent "dont care" -not loggedin -ERROR request rent failed
+REQUEST return "dont care" -not loggedin -ERROR request return failed
+REQUEST addmovie "dont care" 1 1 "dont care" -not loggedin -ERROR request addmovie failed
+REQUEST remmovie "dont care" -not loggedin -ERROR request remmovie failed
+REQUEST changeprice "dont care" 50 -not loggedin -ERROR request cahngeprice failed
+
 LOGIN john potato -success -ACK login succeeded
 REQUEST info -success -ACK info "The Godfather" "The Pursuit Of Happyness" "The Notebook" "Justice League" "gffd"
 REQUEST balance info -success -ACK balance 0

@@ -34,7 +34,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
                             break;
                         }
                         case "add": {
-                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance info failed";
+                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance add failed";
                             break;
                         }
                     }
@@ -142,15 +142,14 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
             });
         }
         moviesLock.readLock().unlock();
-        if (res.get().equals("ACK info "))
-            return "ERROR info failed";
+        if (res.get().equals("ACK info"))
+            return "ERROR request info failed";
         return res.get();
     }
 
     private String rentProcess() {
         String movieName = msg.remove(0);
         String userName = sharedProtocolData.getNameByConnectionId(connectionId);
-        //TODO: check if there is another way to lock this locks - in this case we will lock maybe one lock for a long time
         usersLock.writeLock().lock();
         moviesLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
