@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69ccfaf9-7b36-444f-a332-e49c90012349" name="Default" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Client/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/BBreactor/ReactorMain.java" afterPath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/BBreactor/ReactorMain.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/BBtpc/TPCMain.java" afterPath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/BBtpc/TPCMain.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/MovieRentalProtocol.java" afterPath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/MovieRentalProtocol.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolMovieUsersData.java" afterPath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolMovieData.java" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/UserServiceTextBaseProtocol.java" afterPath="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/UserServiceTextBaseProtocol.java" />
       <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBreactor/ReactorMain.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBreactor/ReactorMain.class" />
       <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBtpc/TPCMain.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBtpc/TPCMain.class" />
       <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/ConnectionsImpl.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/ConnectionsImpl.class" />
@@ -215,10 +209,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="52" />
-    <option name="y" value="31" />
-    <option name="width" value="1299" />
-    <option name="height" value="764" />
+    <option name="x" value="1136" />
+    <option name="width" value="1289" />
+    <option name="height" value="763" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -577,14 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1515923128635</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="init">
+      <created>1515925085436</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1515925085436</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="20216000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="31" width="1920" height="1044" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
