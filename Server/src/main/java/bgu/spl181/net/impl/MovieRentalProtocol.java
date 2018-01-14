@@ -2,7 +2,6 @@ package bgu.spl181.net.impl;
 
 
 import bgu.spl181.net.api.bidi.Connections;
-import bgu.spl181.net.impl.BBtpc.SharedProtocolData;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,7 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private String broadcastMessage;
-    public MovieRentalProtocol(SharedProtocolData sharedProtocolData) {
+
+    public MovieRentalProtocol(SharedProtocolMovieUsersData sharedProtocolData) {
         super(sharedProtocolData);
         broadcastMessage = "";
     }
@@ -30,11 +30,11 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
                 case "balance": {
                     switch ((!msg.isEmpty() ? msg.remove(0) : "")) {
                         case "info": {
-                            response = isLoggedIn ? balanceInfoProcess() : "ERROR request balance info failed";
+                            response = isLoggedIn ? balanceInfoProcess() : "ERROR request balance failed";
                             break;
                         }
                         case "add": {
-                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance add failed";
+                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance failed";
                             break;
                         }
                     }

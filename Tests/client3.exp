@@ -33,8 +33,8 @@ proc Test { command errorMessage error expected } {
 }
 spawn bin/BBclient 127.0.0.1 7777
 Test "REQUEST return \"dont care\"" "not loggedin" "ACK" "ERROR request return failed"
-Test "REQUEST balance info" "not loggedin" "ACK" "ERROR request balance info failed"
-Test "REQUEST balance add" "not loggedin" "ACK" "ERROR request balance add failed"
+Test "REQUEST balance info" "not loggedin" "ACK" "ERROR request balance failed"
+Test "REQUEST balance add" "not loggedin" "ACK" "ERROR request balance failed"
 Test "SIGNOUT" "not loggedin" "ACK" "ERROR signout failed"
 Test "LOGIN guy amit" "user does not exists" "ACK" "ERROR login failed"
 Test "REGISTER client3 client3 country=\"israel\"" "should be successful" "ERROR" "ACK registration succeeded"

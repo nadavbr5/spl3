@@ -16,6 +16,6 @@ then
     mv Database/Movies1.json Database/Movies.json
 fi
 cp Database/Movies.json Database/Movies1.json
-mvn exec:java -Dexec.mainClass="bgu.spl181.net.impl.$server" -Dexec.args="7777"
+mvn exec:java -Dexec.mainClass=bgu.spl181.net.impl.$server -Dexec.args="7777"
 done
 exit

@@ -3,7 +3,6 @@ package bgu.spl181.net.impl;
 
 import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
 import bgu.spl181.net.api.bidi.Connections;
-import bgu.spl181.net.impl.BBtpc.SharedProtocolData;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -19,11 +18,11 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock(true);
     protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock(true);
     protected ArrayList<String> msg;
-    protected SharedProtocolData sharedProtocolData;
+    protected SharedProtocolMovieUsersData sharedProtocolData;
     protected String response;
     protected boolean isLoggedIn = false;
 
-    public UserServiceTextBaseProtocol(SharedProtocolData sharedProtocolData) {
+    public UserServiceTextBaseProtocol(SharedProtocolMovieUsersData sharedProtocolData) {
         this.sharedProtocolData = sharedProtocolData;
 
     }
