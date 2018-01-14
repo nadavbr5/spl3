@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private String broadcastMessage;
 
-    public MovieRentalProtocol(SharedProtocolMovieUsersData sharedProtocolData) {
+    public MovieRentalProtocol(SharedProtocolMovieData sharedProtocolData) {
         super(sharedProtocolData);
         broadcastMessage = "";
     }

@@ -18,11 +18,11 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock(true);
     protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock(true);
     protected ArrayList<String> msg;
-    protected SharedProtocolMovieUsersData sharedProtocolData;
+    protected SharedProtocolMovieData sharedProtocolData;
     protected String response;
     protected boolean isLoggedIn = false;
 
-    public UserServiceTextBaseProtocol(SharedProtocolMovieUsersData sharedProtocolData) {
+    public UserServiceTextBaseProtocol(SharedProtocolMovieData sharedProtocolData) {
         this.sharedProtocolData = sharedProtocolData;
 
     }

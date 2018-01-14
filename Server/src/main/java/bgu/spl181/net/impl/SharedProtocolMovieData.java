@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class SharedProtocolMovieUsersData<T> extends SharedProtocolUsersData<T> {
+public class SharedProtocolMovieData<T> extends SharedProtocolUsersData<T> {
     protected final String moviesPath = "Database/Movies.json";
 
-    public SharedProtocolMovieUsersData(ConnectionsImpl connectionsImpl) {
+    public SharedProtocolMovieData(ConnectionsImpl connectionsImpl) {
         super(connectionsImpl);
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setPrettyPrinting();
