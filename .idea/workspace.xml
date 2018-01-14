@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69ccfaf9-7b36-444f-a332-e49c90012349" name="Default" comment="init">
+    <list default="true" id="69ccfaf9-7b36-444f-a332-e49c90012349" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBreactor/ReactorMain.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBreactor/ReactorMain.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBtpc/TPCMain.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/BBtpc/TPCMain.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/ConnectionsImpl.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/ConnectionsImpl.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/Movie.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/Movie.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/MovieRentalProtocol.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/MovieRentalProtocol.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/User.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/User.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/UserServiceTextBaseProtocol.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/impl/UserServiceTextBaseProtocol.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/ActorThreadPool.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/ActorThreadPool.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/NonBlockingConnectionHandler.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/NonBlockingConnectionHandler.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/Reactor.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/Reactor.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/bidi/BlockingConnectionHandler.class" afterPath="$PROJECT_DIR$/Server/target/classes/bgu/spl181/net/srv/bidi/BlockingConnectionHandler.class" />
-      <change beforePath="$PROJECT_DIR$/Server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/Server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/Server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/Server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Server/target/" />
@@ -54,8 +41,13 @@
         <entry file="file://$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolUsersData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-              <folding />
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#2649#2650#0" expanded="true" />
+                <element signature="e#2703#2704#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,10 +187,10 @@
         <option value="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/MovieRentalProtocol.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolMovieData.java" />
         <option value="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolData.java" />
-        <option value="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolUsersData.java" />
         <option value="$PROJECT_DIR$/Tests/server.sh" />
         <option value="$PROJECT_DIR$/Tests/client2.exp" />
         <option value="$PROJECT_DIR$/Tests/client3.exp" />
+        <option value="$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolUsersData.java" />
       </list>
     </option>
   </component>
@@ -577,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515925085436</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="init">
+      <created>1515925426018</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1515925426018</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -585,6 +584,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -598,7 +598,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21878335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21878335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -922,8 +922,13 @@
     <entry file="file://$PROJECT_DIR$/Server/src/main/java/bgu/spl181/net/impl/SharedProtocolUsersData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2703#2704#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
