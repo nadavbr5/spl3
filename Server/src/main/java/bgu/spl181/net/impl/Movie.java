@@ -1,4 +1,4 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
@@ -60,7 +60,7 @@ public class Movie {
         bannedCountries.forEach(country -> {
                 res.set(res.get() + " " + "\""+country+"\"");
         });
-        return "\""+name+"\" " + availableAmount + " " + totalAmount + " " + res.get();
+        return "\""+name+"\" " + availableAmount + " " + totalAmount + res.get();
 
     }
 

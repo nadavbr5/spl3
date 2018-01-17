@@ -1,9 +1,8 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 
-import main.java.bgu.spl181.net.api.bidi.BidiMessagingProtocol;
-import main.java.bgu.spl181.net.api.bidi.Connections;
-import main.java.bgu.spl181.net.impl.BBtpc.SharedProtocolData;
+import bgu.spl181.net.api.bidi.BidiMessagingProtocol;
+import bgu.spl181.net.api.bidi.Connections;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -19,11 +18,11 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
     protected static final ReentrantReadWriteLock moviesLock = new ReentrantReadWriteLock(true);
     protected static final ReentrantReadWriteLock usersLock = new ReentrantReadWriteLock(true);
     protected ArrayList<String> msg;
-    protected SharedProtocolData sharedProtocolData;
+    protected SharedProtocolMovieData sharedProtocolData;
     protected String response;
     protected boolean isLoggedIn = false;
 
-    public UserServiceTextBaseProtocol(SharedProtocolData sharedProtocolData) {
+    public UserServiceTextBaseProtocol(SharedProtocolMovieData sharedProtocolData) {
         this.sharedProtocolData = sharedProtocolData;
 
     }
@@ -33,7 +32,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         done = false;
         this.connectionId = connectionId;
         this.connections = (ConnectionsImpl) connections;
-        response = null;
+        response = "";
     }
 
     //if msg is empty at the end of this function that means that the action is 'request'
@@ -78,6 +77,8 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             return "ERROR registration failed";
         String userName = this.msg.remove(0);
         String password = this.msg.remove(0);
+        if (isLoggedIn)
+            return "ERROR registration failed";
         //if the user name already exists in the system- returns error
         usersLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
@@ -86,9 +87,6 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
         try {
             if (isRegistered.get())
                 return "ERROR registration failed";
-        } finally {
-            usersLock.writeLock().unlock();
-        }
         User reg = new User(userName, "normal", password, new String());
         users.add(reg);
         sharedProtocolData.updateUsers(users);
@@ -99,6 +97,9 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             this.msg.add(0, "REGISTER");
         }
         return "CONTINUE";
+	 } finally {
+            usersLock.writeLock().unlock();
+        }
     }
 
     private String loginProcess() {
@@ -128,7 +129,7 @@ public class UserServiceTextBaseProtocol implements BidiMessagingProtocol<String
             connections.send(connectionId, "ACK signout succeeded");
             connections.disconnect(connectionId);
             return "SIGNOUT";
-        } else return "ERROR logout failed";
+        } else return "ERROR signout failed";
 
     }
 

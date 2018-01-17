@@ -1,8 +1,7 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 
-import main.java.bgu.spl181.net.api.bidi.Connections;
-import main.java.bgu.spl181.net.impl.BBtpc.SharedProtocolData;
+import bgu.spl181.net.api.bidi.Connections;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,7 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
     private String broadcastMessage;
-    public MovieRentalProtocol(SharedProtocolData sharedProtocolData) {
+
+    public MovieRentalProtocol(SharedProtocolMovieData sharedProtocolData) {
         super(sharedProtocolData);
         broadcastMessage = "";
     }
@@ -30,11 +30,11 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
                 case "balance": {
                     switch ((!msg.isEmpty() ? msg.remove(0) : "")) {
                         case "info": {
-                            response = isLoggedIn ? balanceInfoProcess() : "ERROR request balance info failed";
+                            response = isLoggedIn ? balanceInfoProcess() : "ERROR request balance failed";
                             break;
                         }
                         case "add": {
-                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance info failed";
+                            response = isLoggedIn ? balanceAddProcess() : "ERROR request balance failed";
                             break;
                         }
                     }
@@ -127,7 +127,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
 
     private String infoProcess() {
         String movieName = (!msg.isEmpty() ? msg.remove(0) : "");
-        AtomicReference<String> res = new AtomicReference<>("ACK info ");
+        AtomicReference<String> res = new AtomicReference<>("ACK info");
         //case 1: we need to send the info of all the movies
         moviesLock.readLock().lock();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
@@ -142,15 +142,14 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
             });
         }
         moviesLock.readLock().unlock();
-        if (res.get().equals("ACK info "))
-            return "ERROR info failed";
+        if (res.get().equals("ACK info"))
+            return "ERROR request info failed";
         return res.get();
     }
 
     private String rentProcess() {
         String movieName = msg.remove(0);
         String userName = sharedProtocolData.getNameByConnectionId(connectionId);
-        //TODO: check if there is another way to lock this locks - in this case we will lock maybe one lock for a long time
         usersLock.writeLock().lock();
         moviesLock.writeLock().lock();
         ArrayList<User> users = sharedProtocolData.getUsers();
@@ -201,7 +200,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         }
         moviesLock.writeLock().lock();
         ArrayList<Movie> movies = sharedProtocolData.getMovies();
-        Movie isExist = getMovie(movieName, movies);
+        Movie isExist = getMovie("\"" + movieName + "\"", movies);
 
         //fail- movieName exits in the system
         if (isExist != null) {
@@ -212,10 +211,10 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
         Movie addMovie = new Movie(movieName, price, bannedCountries, amount);
         movies.add(addMovie);
         sharedProtocolData.updateMovies(movies);
-        broadcastMessage="BROADCAST movie " + movieName + " " + amount + " " + price;
+        broadcastMessage = "BROADCAST movie " + "\"" + movieName + "\" " + amount + " " + price;
         moviesLock.writeLock().unlock();
 
-        return "ACK addmovie " + movieName + " success";
+        return "ACK addmovie \"" + movieName + "\" success";
     }
 
     private String remMovieProcess() {

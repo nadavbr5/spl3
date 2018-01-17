@@ -1,10 +1,10 @@
-package main.java.bgu.spl181.net.impl.BBtpc;
+package bgu.spl181.net.impl;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-import main.java.bgu.spl181.net.impl.ConnectionsImpl;
-import main.java.bgu.spl181.net.impl.Movie;
-import main.java.bgu.spl181.net.impl.User;
 
 import java.io.File;
 import java.io.FileReader;
@@ -15,19 +15,15 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class SharedProtocolData<T> {
-    private ConcurrentHashMap<Integer, String> loggedInUsers = new ConcurrentHashMap<>();
-    private ConnectionsImpl connectionsImpl;
-    protected Gson gson;
-    private final String usersPath = "Server/Database/Users.json";
-    private final String moviesPath = "Server/Database/Movies.json";
 
-    public SharedProtocolData(ConnectionsImpl connectionsImpl) {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.setPrettyPrinting();
-        gsonBuilder.registerTypeAdapter(Integer.class, (JsonSerializer<Integer>) (integer, type, jsonSerializationContext) -> new JsonPrimitive(integer.toString()));
-        gson=gsonBuilder.create();
-        this.connectionsImpl=connectionsImpl;
+public class SharedProtocolUsersData<T> {
+    protected final String usersPath = "Database/Users.json";
+    protected ConcurrentHashMap<Integer, String> loggedInUsers = new ConcurrentHashMap<>();
+    protected ConnectionsImpl connectionsImpl;
+    protected Gson gson;
+
+    public SharedProtocolUsersData(ConnectionsImpl connectionsImpl) {
+        this.connectionsImpl = connectionsImpl;
     }
 
     public boolean broadcastLoggedIn(T msg) {
@@ -45,21 +41,6 @@ public class SharedProtocolData<T> {
 
     }
 
-
-    //after finishing with the arrayList- should call readLock().unlock
-    public ArrayList<Movie> getMovies() {
-        File jsonFile = new File(moviesPath);
-        try (FileReader reader = new FileReader(jsonFile)) {
-            Type arrayListType = new TypeToken<ArrayList<Movie>>() {
-            }.getType();
-            JsonElement jsonElement = gson.fromJson(reader, JsonElement.class);
-            return gson.fromJson(jsonElement.getAsJsonObject().get("movies"), arrayListType);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
-    }
-
     //after finishing with the arrayList- should call readLock().unlock
     public ArrayList<User> getUsers() {
         File jsonFile = new File(usersPath);
@@ -72,20 +53,6 @@ public class SharedProtocolData<T> {
             e.printStackTrace();
         }
         return new ArrayList<>();
-    }
-
-    public void updateMovies(ArrayList<Movie> movies) {
-        File jsonFile = new File(moviesPath);
-        try (FileWriter writer = new FileWriter(jsonFile)) {
-            JsonArray jsonArrayMovies = gson.toJsonTree(movies).getAsJsonArray();
-            JsonObject jsonMovies = new JsonObject();
-            jsonMovies.add("movies", jsonArrayMovies);
-            writer.write(jsonMovies.toString());
-            writer.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void updateUsers(ArrayList<User> users) {
@@ -106,6 +73,4 @@ public class SharedProtocolData<T> {
     public String getNameByConnectionId(int connectionId) {
         return loggedInUsers.get(connectionId);
     }
-
-
 }

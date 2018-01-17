@@ -1,17 +1,18 @@
-package main.java.bgu.spl181.net.impl.BBtpc;
+package bgu.spl181.net.impl.BBtpc;
 
-import main.java.bgu.spl181.net.impl.ConnectionsImpl;
-import main.java.bgu.spl181.net.impl.EncoderDecoder;
-import main.java.bgu.spl181.net.impl.MovieRentalProtocol;
-import main.java.bgu.spl181.net.srv.Server;
-import main.java.bgu.spl181.net.srv.TpcServer;
+import bgu.spl181.net.impl.ConnectionsImpl;
+import bgu.spl181.net.impl.EncoderDecoder;
+import bgu.spl181.net.impl.MovieRentalProtocol;
+import bgu.spl181.net.impl.SharedProtocolMovieData;
+import bgu.spl181.net.srv.Server;
+import bgu.spl181.net.srv.TpcServer;
 
 import java.io.IOException;
 
 public class TPCMain {
     public static void main(String[] args) {
         ConnectionsImpl connectionsImpl =new ConnectionsImpl();
-        SharedProtocolData sharedProtocolData =new SharedProtocolData(connectionsImpl);
+        SharedProtocolMovieData sharedProtocolData = new SharedProtocolMovieData(connectionsImpl);
         try ( Server server = new TpcServer(7777, ()->new MovieRentalProtocol(sharedProtocolData), EncoderDecoder::new, connectionsImpl)) {
             server.serve();
         } catch (IOException e) {

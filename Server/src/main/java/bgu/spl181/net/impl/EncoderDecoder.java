@@ -1,7 +1,7 @@
-package main.java.bgu.spl181.net.impl;
+package bgu.spl181.net.impl;
 
 
-import main.java.bgu.spl181.net.api.bidi.MessageEncoderDecoder;
+import bgu.spl181.net.api.bidi.MessageEncoderDecoder;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
