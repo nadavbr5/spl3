@@ -1,12 +1,12 @@
+bgu/spl181/net/impl/SharedProtocolMovieData$1.class
 bgu/spl181/net/api/bidi/Connections.class
+bgu/spl181/net/impl/BaseMovie.class
 bgu/spl181/net/impl/UserServiceTextBaseProtocol.class
 bgu/spl181/net/srv/bidi/BlockingConnectionHandler.class
 bgu/spl181/net/srv/TpcServer.class
 bgu/spl181/net/impl/SharedProtocolUsersData$1.class
 bgu/spl181/net/srv/ActorThreadPool.class
-bgu/spl181/net/impl/SharedProtocolMovieUsersData$1.class
 bgu/spl181/net/api/bidi/MessageEncoderDecoder.class
-bgu/spl181/net/impl/SharedProtocolMovieUsersData.class
 bgu/spl181/net/impl/MovieRentalProtocol.class
 bgu/spl181/net/impl/BBreactor/ReactorMain.class
 bgu/spl181/net/srv/Reactor.class
@@ -17,6 +17,7 @@ bgu/spl181/net/impl/User.class
 bgu/spl181/net/impl/Movie.class
 bgu/spl181/net/impl/EncoderDecoder.class
 bgu/spl181/net/api/bidi/BidiMessagingProtocol.class
+bgu/spl181/net/impl/SharedProtocolMovieData.class
 bgu/spl181/net/impl/ConnectionsImpl.class
 bgu/spl181/net/srv/Server.class
 bgu/spl181/net/srv/bidi/ConnectionHandler.class

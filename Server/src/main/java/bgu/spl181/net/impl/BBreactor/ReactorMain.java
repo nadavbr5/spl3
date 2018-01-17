@@ -12,7 +12,7 @@ public class ReactorMain {
     public static void main(String[] args) {
         ConnectionsImpl connectionsImpl =new ConnectionsImpl();
         SharedProtocolMovieData sharedProtocolData = new SharedProtocolMovieData(connectionsImpl);
-        try ( Server server = Server.reactor(8,7777, ()->new MovieRentalProtocol(sharedProtocolData), EncoderDecoder::new, connectionsImpl)) {
+        try (Server server = Server.reactor(8, Integer.parseInt(args[0]), () -> new MovieRentalProtocol(sharedProtocolData), EncoderDecoder::new, connectionsImpl)) {
             server.serve();
         } catch (IOException e) {
             e.printStackTrace();

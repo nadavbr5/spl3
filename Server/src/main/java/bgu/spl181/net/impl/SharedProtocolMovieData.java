@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class SharedProtocolMovieData<T> extends SharedProtocolUsersData<T> {
     protected final String moviesPath = "Database/Movies.json";
-
     public SharedProtocolMovieData(ConnectionsImpl connectionsImpl) {
         super(connectionsImpl);
         GsonBuilder gsonBuilder = new GsonBuilder();

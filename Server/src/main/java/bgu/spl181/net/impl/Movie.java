@@ -3,18 +3,15 @@ package bgu.spl181.net.impl;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Movie {
-    private static int id=0;
-    private String name;
+public class Movie extends BaseMovie {
     private int price;
     private ArrayList<String> bannedCountries;
     private int availableAmount;
     private int totalAmount;
 
     //TODO:: check if the name already exists in the system and if the price or the amount are <=0
-    public Movie(String name, int price, ArrayList<String> bannedCountries, int totalAmount) {
-        id++;
-        this.name = name;
+    public Movie(String name, int price, ArrayList<String> bannedCountries, int totalAmount, int id) {
+        super(name, id);
         this.price = price;
         this.bannedCountries = bannedCountries;
         this.availableAmount = totalAmount;
@@ -27,17 +24,11 @@ public class Movie {
 
     public int getAvailableAmount(){ return this.availableAmount; }
 
-    //returns false if the movie is not available, otherwise decrease availableAmount and returns true
-    public boolean rentMovie() {
-        if (availableAmount == 0) return false;
-        this.availableAmount--;
-        return true;
-    }
-
     public boolean isbannedCountry(String country) {
         return this.bannedCountries.contains(country);
     }
 
+    //returns false if the movie is not available, otherwise decrease availableAmount and returns true
     public boolean rent() {
         if (availableAmount == 0)
             return false;
@@ -62,10 +53,6 @@ public class Movie {
         });
         return "\""+name+"\" " + availableAmount + " " + totalAmount + res.get();
 
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getPrice() {

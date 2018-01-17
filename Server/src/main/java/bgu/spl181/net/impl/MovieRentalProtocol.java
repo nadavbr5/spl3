@@ -207,8 +207,11 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
             moviesLock.writeLock().unlock();
             return "ERROR request addmovie failed";
         }
-
-        Movie addMovie = new Movie(movieName, price, bannedCountries, amount);
+        AtomicInteger id = new AtomicInteger();
+        movies.forEach(movie -> {
+            id.set(Math.max(id.get(), movie.getId()));
+        });
+        Movie addMovie = new Movie(movieName, price, bannedCountries, amount, id.incrementAndGet());
         movies.add(addMovie);
         sharedProtocolData.updateMovies(movies);
         broadcastMessage = "BROADCAST movie " + "\"" + movieName + "\" " + amount + " " + price;
@@ -311,7 +314,7 @@ public class MovieRentalProtocol extends UserServiceTextBaseProtocol {
                     if (movie.rent()) {
                         //we assume that we succeed renting the movie
                         //broadcast to all Logged-in users
-                        user.addMovie(movie);
+                        user.addMovie(new BaseMovie(movie.getName(), movie.getId()));
                         broadcastMessage="BROADCAST movie " + movieName + " " + Integer.toString(movie.getAvailableAmount()) + " " + Integer.toString(movie.getPrice());
                         return "ACK rent " + movieName + " success";
                     } else {

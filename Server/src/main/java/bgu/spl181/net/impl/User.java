@@ -9,7 +9,7 @@ public class User {
     private String username;
     private String type;
     private String password;
-    private ArrayList<Movie> movies;
+    private ArrayList<BaseMovie> movies;
     private int balance;
     private String country;
 
@@ -18,7 +18,7 @@ public class User {
         this.username = name;
         this.type = type;
         this.password = password;
-        this.movies = new ArrayList<Movie>();
+        this.movies = new ArrayList<>();
         this.balance = 0;
         this.country= country;
     }
@@ -72,7 +72,7 @@ public class User {
         return country;
     }
 
-    public void addMovie(Movie m){
+    public void addMovie(BaseMovie m) {
         this.movies.add(m);
     }
 
